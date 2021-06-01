@@ -31,16 +31,24 @@ $posts = $results->fetchAll(PDO::FETCH_ASSOC);
     $postNum = 1;
     foreach($posts as $post) { 
     ?>
-        <div class="news <?php echo "news-" . $postNum ?>"> <!-- creates the classes news-1 / news-2 / news-3 -->
+        <div class="news <?php echo "news-" . $postNum . " " . $post["department"] . "-department-color" ?>"> <!-- creates the classes news-1 / news-2 / news-3 -->
             <div class="tooltip">
                 <a href="#"><h3><?php echo $post["category"] ?></h3></a>
                 <div class="tooltip-text">
-                    <p>View all: Web Design /<?php echo $post["category"]?></p>
+                    <p>View all: 
+                    <?php 
+                    if($post["department"] === "Web") {
+                        echo $post["department"] . ' Design/' . $post["category"];
+                    } else {
+                        echo $post["department"] . '/' . $post["category"];
+                    }
+                    ?>
+                    </p>
                 </div>
             </div>                     
             <a href="#">
                 <div class="news-image-parent">
-                    <div class="news-image-child <?php echo "news-" . $postNum . "-image-child" ?>" > <!-- creates the classes news-1-image-child / news-2-image-child / news-3-image-child -->
+                    <div style="background-image: url('<?php echo $post["img_src"] ?>');" class="news-image-child">
                     </div>
                 </div>
             </a> <!-- larger screens - background image -->
@@ -55,7 +63,13 @@ $posts = $results->fetchAll(PDO::FETCH_ASSOC);
                     <div class="thumbnail"><img src="<?php echo $post["posted_by_img_src"] ?>" alt="Photo of <?php echo $post["posted_by"] ?>"></div>
                     <div class="posted-by-text">
                         <p><strong> Posted by <?php echo $post["posted_by"] ?></strong></p>
-                        <p><?php echo $post["posted_date"] ?></p>                                
+                        <p>
+                        <?php 
+                        $date=date_create($post["posted_date"]);
+                        echo date_format($date,"jS F Y");
+                        //echo $post["posted_date"] 
+                        ?>
+                        </p>                                
                     </div>    
                 </div>
             </div>    
@@ -70,5 +84,4 @@ $posts = $results->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-<!-- 
-style="background-image: url('<//?php echo $post["img_src"] ?>');" -->
+

@@ -98,31 +98,9 @@
     line-height: 35px;
     color: v.$white;   
     border-radius: v.$round-corner;
-    font-weight: v.$regular;
-    
+    font-weight: v.$regular; 
 }
-
-.news-text-1 .button a {
-    background-color: v.$web-color1;
-    border: 1px solid v.$web-color1;
-    &:hover,
-    &:active {
-        background-color: v.$web-color2;
-        border-color: v.$web-color3;
-    }
-}
-
-.news-text-2 .button a,
-.news-text-3 .button a {
-    background-color: v.$it-color1;
-    border: 1px solid v.$it-color1;
-    &:hover,
-    &:active {
-        background-color: v.$it-color2;
-        border-color: v.$it-color3;
-    }
-}
-
+//NOTE: the news text button colors are set with the department-color classes in latest.scss
 
 //SOCIAL BUTTONS
 .social-button {

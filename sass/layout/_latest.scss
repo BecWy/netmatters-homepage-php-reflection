@@ -154,14 +154,14 @@
     }
 }
 
-.news-text-1 > h3 > a {
-    color: v.$web-color1;
-}
+// .news-text-1 > h3 > a {
+//     color: v.$web-color1;
+// }
 
-.news-text-2 > h3 > a,
-.news-text-3 > h3 > a {
-    color: v.$it-color1;
-}
+// .news-text-2 > h3 > a,
+// .news-text-3 > h3 > a {
+//     color: v.$it-color1;
+// }
 
 
 .news-text > p {
@@ -255,20 +255,6 @@
         border-radius: 3px 3px 0px 0px;
         transition: all .25s cubic-bezier(.215,.61,.355,1);
         opacity: 1;
-    }
-
-    .news-1-image-child {           
-        background: url("../images/latest/news-1.jpeg") no-repeat center;
-        background-size: cover;
-    }
-
-    .news-2-image-child {           
-        background: url("../images/latest/news-2.jpeg") no-repeat center;
-        background-size: cover;
-    }
-    
-    .news-3-image-child {           
-        background: url("../images/latest/news-3.jpeg") no-repeat center;
         background-size: cover;
     }
 }
@@ -323,14 +309,14 @@
     font-weight: v.$bold;
 }
 
-.news-1 .tooltip h3 {
-    background-color: v.$web-color1;
-}
+// .news-1 .tooltip h3 {
+//     background-color: v.$web-color1;
+// }
 
-.news-2 .tooltip h3,
-.news-3 .tooltip h3 {
-    background-color: v.$it-color1;
-}
+// .news-2 .tooltip h3,
+// .news-3 .tooltip h3 {
+//     background-color: v.$it-color1;
+// }
 
 .news .tooltip-text {
     display: none;
@@ -385,5 +371,58 @@
     }
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////
+//Department specific colors for posts (aka purple for web and blue for IT)
 
+.Web-department-color {
+    h3 a {
+        color: v.$web-color1;
+    }
+    .tooltip h3 {
+        background-color: v.$web-color1;
+    }
+    .button > a {
+        background-color: v.$web-color1;
+        border: 1px solid v.$web-color1;
+        &:hover,
+        &:active {
+            background-color: v.$web-color2;
+            border-color: v.$web-color3;
+        }
+    }
+}
 
+.IT-department-color {
+    h3 a {
+        color: v.$it-color1;
+    }
+    .tooltip h3 {
+        background-color: v.$it-color1;
+    }
+    .button > a {
+        background-color: v.$it-color1;
+        border: 1px solid v.$it-color1;
+        &:hover,
+        &:active {
+            background-color: v.$it-color2;
+            border-color: v.$it-color3;
+        }
+    }
+}
+
+//for testing only, doesn't exist otherwise
+.Marketing-department-color {
+    h3 a {
+        color: teal;
+    }
+    .tooltip h3 {
+        background-color: teal;
+    }
+    .button > a {
+        background-color: teal;
+    }
+}
+
+//to remove these colors from:
+//.news-text-1>h3>a
+//.tooltip h3
