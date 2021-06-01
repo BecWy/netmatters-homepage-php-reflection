@@ -116,7 +116,9 @@
                         </div>   
                     </div> <!-- end intro -->
 
-                    <div class="latest"> 
+                    <?php include "./latest-posts.php"; ?>
+
+                    <!-- <div class="latest"> 
                         <h2><span id="latest-title">Latest</span></h2>  
                         <div class="news-container">
                             <div class="news news-1">
@@ -131,10 +133,10 @@
                                         <div class="news-1-image-child news-image-child">
                                         </div>
                                     </div>
-                                </a> <!-- larger screens - background image -->
+                                </a> larger screens - background image
                                 <a href="#">
                                     <img src="./images/latest/news-1.jpeg" alt="Ecommerce website advert">
-                                </a> <!-- small screens - inserted image -->
+                                </a> small screens - inserted image
                                 <div class="news-text news-text-1">                
                                     <h3><a href="#">Looking To Sell Online? An eCommerce Website...</a></h3>
                                     <p>Are you interested in enquiring about an ecommerce website, we encourage you to get in touch...</p>
@@ -160,10 +162,10 @@
                                         <div class="news-2-image-child news-image-child">
                                         </div>
                                     </div>
-                                </a> <!-- larger screens - background image -->
+                                </a> larger screens - background image
                                 <a href="#">
                                     <img src="./images/latest/news-2.jpeg" alt="Job advert for 2nd Line Support Technician">
-                                </a> <!-- small screens - inserted image -->
+                                </a> small screens - inserted image
                                 <div class="news-text news-text-2">  
                                     <h3><a href="#">2nd Line Support Technician</a></h3>
                                     <p>SALARY: &pound;22,000 - &pound;28,000 + Bonus & Pension Hours: 40 hours per week, Monday - Frida...</p>
@@ -189,10 +191,10 @@
                                         <div class="news-3-image-child news-image-child">
                                         </div>
                                     </div>
-                                </a> <!-- larger screens - background image-->
+                                </a> larger screens - background image
                                 <a href="#">
                                     <img src="./images/latest/news-3.jpeg" alt="Job advert for 1st Line Support Technician">
-                                </a> <!-- small screens - inserted image -->
+                                </a> small screens - inserted image
                                 <div class="news-text news-text-3"> 
                                     <h3><a href="#">1st Line Support Technician</a></h3>
                                     <p>SALARY: &pound;18,000 - &pound;23,000 + Bonus & PensionHours: 40 hours per week, Monday - Friday Loc...</p>
@@ -206,8 +208,8 @@
                                     </div>
                                 </div>
                             </div>        
-                        </div> <!--end news-container-->
-                    </div> <!-- end latest -->
+                        </div> end news-container
+                    </div> end latest -->
 
                 </div>  <!-- end main-content -->
 
