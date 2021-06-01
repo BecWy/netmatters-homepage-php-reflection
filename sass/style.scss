@@ -1,0 +1,31 @@
+// ======================================
+//  Partial Imports
+// ======================================
+
+// Utilities
+@use "utilities/variables" as v;
+@use 'utilities/mixins';
+@use 'utilities/functions';
+        
+// Base Styles     
+@use 'base/normalize';
+@use 'base/base';
+
+// Layout Styles
+@use 'layout/nav';
+@use 'layout/header';
+@use 'layout/burger-menu';
+@use 'layout/cards';
+@use 'layout/intro';
+@use 'layout/latest';   
+@use 'layout/footer';
+
+// Component Styles
+@use 'components/buttons';
+@use 'components/icons';
+@use 'components/slider';
+@use 'components/cookies.scss';
+
+
+//JS related scss
+@use 'components/js';

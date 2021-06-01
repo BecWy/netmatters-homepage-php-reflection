@@ -1,0 +1,26 @@
+@use "utilities/variables" as v;
+
+.card .icon i {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 17px;
+    line-height: 58px;
+    color: v.$white;
+}
+
+//LOOPS
+// ICONS - base
+@each $theme, $color in v.$themes {
+    .icon-#{$theme} i {
+        background-color: $color;
+    }
+} 
+
+//CARD ICONS:HOVER
+@each $theme, $color in v.$themes {
+    .card-#{$theme}:hover .icon-#{$theme} i {
+        color: $color;
+        background-color: v.$white;
+    }
+} 

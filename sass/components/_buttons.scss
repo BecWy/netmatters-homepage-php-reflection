@@ -1,0 +1,196 @@
+@use "utilities/variables" as v; //variables
+@use "utilities/mixins" as m; //mixins
+
+//LOOPS
+ // CARD BUTTONS
+ @each $theme, $color in v.$themes {
+    .button-#{$theme} {
+        color: v.$white;
+        background-color: $color;
+        font-size: 16px;
+    }
+} 
+
+// CARD BUTTONS:HOVER
+@each $theme, $color in v.$themes {
+    .card-#{$theme}:hover .button-#{$theme} {
+        color: $color;
+        background-color: v.$white;
+    }
+} 
+
+
+//STYLES
+.button a {
+    text-align: center;
+    display: inline-block;
+    border-radius: v.$round-corner;
+    text-transform: uppercase;
+    font-weight: v.$bold;
+}
+
+.fake-button {
+    text-align: center;
+    display: inline-block;
+    border-radius: v.$round-corner;
+    text-transform: uppercase;
+    font-weight: v.$regular;
+}
+
+
+//SLIDES
+.slide .button {
+    border-radius: v.$round-corner;
+}
+
+
+@each $theme, $color in v.$themes {
+    .slide .button-#{$theme} a {
+        color: v.$white;
+        background-color: $color;
+        border: 1px solid $color;
+        padding: 5px 20px;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        font-weight: v.$regular;
+    }
+} 
+
+@each $theme, $color in v.$themes-secondary {
+    .slide .button-#{$theme} a:hover,
+    .slide .button-#{$theme} a:active {
+        background-color: $color;
+    }
+} 
+
+@each $theme, $color in v.$themes-tertiary {
+    .slide .button-#{$theme} a:hover,
+    .slide .button-#{$theme} a:active {
+        border: 1px solid $color;
+    }
+}
+
+.intro .button a {
+    padding: 5px 15px;
+    font-size: 17px;
+    font-weight: v.$regular;
+    line-height: 35px;
+    background-color: v.$culture-button-color1;
+    color: v.$mainGrey;
+    border: 1px solid v.$culture-button-color1;
+    &:hover,
+    &:active {
+        background-color: v.$culture-button-color2;
+        border: 1px solid v.$culture-button-color3;
+    }
+}
+
+
+.news-text > .button {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.news-text .button a {
+    padding: 5px 15px;
+    font-size: 17px;
+    line-height: 35px;
+    color: v.$white;   
+    border-radius: v.$round-corner;
+    font-weight: v.$regular;
+    
+}
+
+.news-text-1 .button a {
+    background-color: v.$web-color1;
+    border: 1px solid v.$web-color1;
+    &:hover,
+    &:active {
+        background-color: v.$web-color2;
+        border-color: v.$web-color3;
+    }
+}
+
+.news-text-2 .button a,
+.news-text-3 .button a {
+    background-color: v.$it-color1;
+    border: 1px solid v.$it-color1;
+    &:hover,
+    &:active {
+        background-color: v.$it-color2;
+        border-color: v.$it-color3;
+    }
+}
+
+
+//SOCIAL BUTTONS
+.social-button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0;
+} 
+
+.social-button li {            
+    list-style-type: none;   
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+    margin-top: 30px; 
+    margin-bottom: 0;
+    height: 55px;
+}
+
+.social-button li a {      
+    padding: 12px 0;
+    justify-content: center;
+    display: block;
+    font-size: 28px;
+    line-height: 28px;
+    width: 100%;
+    height: 100%;
+    padding: auto 15px;
+    background-color: v.$social-base;
+}
+
+#facebook {
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 15px;
+    & a:hover {
+        background-color: v.$facebook;
+    }
+}
+
+#twitter {
+    padding-left: 15px;
+    margin-left: 0;
+    margin-right: auto;
+    & a:hover {
+        background-color: v.$twitter;
+    }
+}
+
+#linked-in {
+    padding-right: 15px;
+    margin-left: 0;
+    margin-right: auto;
+    & a:hover {
+        background-color: v.$linkedin;
+    }
+}
+
+
+//ACTIVE SETTINGS
+.support-button:active,
+.contact-button:active,
+#menu:active,
+.slides .button a:active,
+.fake-button:active,
+.intro-container .button a:active,
+.news-text .button a:active {
+    @include m.button-active-shadow;
+}

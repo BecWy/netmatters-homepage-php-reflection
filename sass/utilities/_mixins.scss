@@ -1,0 +1,74 @@
+@use "utilities/variables" as v;
+
+///////////MIXINS///////////////////////////////
+
+// BUTTON:ACTIVE BOX SHADOW ------------------WORKS----------------------
+@mixin button-active-shadow {
+     box-shadow: rgba(0, 0, 0, 0.125) 0px 3px 5px 0px inset;
+}
+
+
+// CARD MIXIN HOVER -------------------WORKS----------------------
+@mixin themes-bg-hov($map) {
+     @each $theme, $color in $map {
+         &-#{$theme}:hover {
+             background-color: $color;
+         }
+     } 
+ }
+ 
+
+ 
+ 
+ // // ICON & BUTTON MIXIN HOVER need to think about if this is useful. Currently a loop.
+ // @mixin themes-fg-hov($map) {
+ //     @each $theme, $color in $map {
+ //         &-#{$theme}:hover {
+ //             background-color: $color;
+ //         }
+ //     } 
+ // }
+ 
+ // .card > * {
+ //     @include themes-fg-hov($themes);
+ // }
+
+
+ //MEDIA QUERIES - TO TEST IN THE FUTURE IN AN ALTERNATE BRANCH
+//EXAMPLE TO TEST. WOULD USE THE BREAKPOINT VARIABLE
+// //mixin
+// @mixin MQ($breakpoints) {
+//     @if $breakpoint == xs {
+//       @media only screen and (max-width: $xs) { @content; }
+//     }
+//     @else if $breakpoint == sm {
+//       @media only screen and (min-width: $sm) and (max-width: $med - 1) { @content; }
+//     }
+//     @else if $breakpoint == med {
+//       @media only screen and (min-width: $med) and (max-width: $lg - 1) { @content; }
+//     }
+//     @else if $breakpoint == lg {
+//       @media only screen and (min-width: $lg) { @content; }
+//     }
+
+//breakpoint mixin for media queries
+
+// @mixin bp($breakpoints) {
+//      @if $point == sm {
+//        @media (min-width: $break-sm) { @content; }
+//      }
+//      @else if $point == med {
+//        @media (min-width: $break-med) { @content; }
+//      }
+//      @else if $point == lg {
+//        @media (min-width: $break-lg)  { @content; }
+//      }
+//    }
+
+//EXAMPLE OF HOW TO USE THE ABOVE 
+// .sidebar {
+//      width: 33.33%;
+//      @include bp(sm) {
+//        width: 100%;
+//      }
+//    }

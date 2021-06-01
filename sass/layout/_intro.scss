@@ -1,0 +1,61 @@
+@use "utilities/variables" as v;
+
+//////////////////////////////////////////////////////////////////////////////////
+//INTRO ///////////////////////////////////////////////////////////////////////
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    padding: 50px 15px;
+    font-size: 16px;
+    line-height: 30px;
+    color: v.$white;
+    background-color: v.$mainGrey;
+    @media (min-width: v.$break-med) {
+        background: v.$mainGrey url("../images/internal-branding/logo-zoomed-transparent.png") no-repeat right bottom;
+        background-size: cover;
+    }
+}
+
+.intro h1 {
+    margin-top: -6px;
+    margin-bottom: 28px;
+    font-size: 36px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: v.$regular;
+}
+
+.intro p {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 30px;
+    & strong {
+        font-weight: v.$bold;
+        line-height: 30px;
+    }
+}
+
+.intro-container,
+#latest-title {
+    @media (min-width: v.$break-sm) {
+        width: 720px;
+        margin: 0 auto;
+        padding-left: 0;
+    }
+    @media (min-width: v.$break-med) {
+        width: 940px;
+    }
+    @media (min-width: v.$break-lg) {  
+        width: 1170px;
+    }
+}
+
+@media (min-width: v.$break-lg) {  
+    .intro-container > h1,
+    .intro-container > p {
+        width: 570px;
+    }
+}

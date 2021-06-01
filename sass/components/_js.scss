@@ -1,0 +1,203 @@
+@use "utilities/variables" as v;
+
+//////////////////////////////////////////////////////////////////////
+// This scss specifically relates to JavaScript interactions
+//1) Search bar toggle
+//2) Sticky header
+//3) Burger menu
+//4) Scroll bar fixes (important for burger menu functionality)
+//5) z indexes (and other styles important for burger menu & sticky header functionality)
+
+
+
+////////////////////////////////////////////////////////////////////////
+//SEARCHBAR TOGGLE
+////////////////////////////////////////////////////////////////////////
+
+//Only want to toggle in medium screens
+@media (min-width: v.$break-med) and (max-width: v.$break-lg) {
+    //hide contact and support buttons on toggle. This class is added and removed in the JS
+    .toggle-hide {
+        display: none;
+    }
+
+    .toggle-visible {
+        animation: visible 400ms ease-out forwards;
+    }
+
+    //edits the search bar width. This class is added and removed in the JS
+    .toggle-search-width {
+        width: 363px;
+        button {
+            margin-right: 0;
+            margin-left: auto;
+            //border-radius: 0px $round-corner $round-corner 0px;
+        }
+    }
+}
+
+@keyframes visible {
+    0% {
+        opacity: 100; 
+      }
+    100% {
+        opacity: 0;
+    }
+}
+
+// #submit,
+// #search-bar-input,
+// #support-button,
+// #contact-button {
+//     opacity: 100;
+// }
+
+
+/////////////////////////////////////////////////////////////////////////
+//STICKY HEADER
+//////////////////////////////////////////////////////////////////////////
+
+//header styles
+header {
+    //position is controlled by sticky-header.js
+    top: 0;
+    left: 0;
+    background-color: v.$white;
+    width: 100%;
+}
+
+//Hides the header when the user is scrolling down. This class is added and removed in the JS
+.nav-hide {
+    position: relative;
+  }
+
+.nav-hide-ie {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+//Shows the header when the user is scrolling up. This class is added and removed in the JS
+.nav-show {
+    //Browsers that DON'T support position:sticky will use this (IE)
+    position: fixed;
+    //Browsers that DO support position:sticky will use this (all modern browsers)
+    position: sticky;
+}
+
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(0); 
+      }
+    100% {
+        transform: translateY(-100%); // height of the header
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%); // height of the header
+      }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.header-animation-scroll-up {
+    animation: slide-down 250ms ease-out forwards;
+}
+
+.header-animation-scroll-down {
+    animation: slide-up 250ms ease-out forwards;
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+//BURGER MENU
+///////////////////////////////////////////////////////////////////////
+
+//This is the overlay that covers the page content that is pushed to the left when the menu is open.
+.menu-open-overlay {
+    position: absolute;
+    display: block; 
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw; //100% also works fine
+}
+
+
+
+/////////////////////////////////////////////////////////////////////
+// Scroll bar fixes (important for burger menu functionality)
+/////////////////////////////////////////////////////////////////////
+html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+html::-webkit-scrollbar {
+    //width: 0px;  /* Remove scrollbar space /
+    background: transparent;  // Optional: makes scrollbar invisible if you don't want to remove the width */
+}
+
+.body-container {
+   overflow-y: scroll;
+   overflow-x: hidden;
+   width: 100vw;
+   height: 100vh;
+   background-color: v.$white;
+}
+
+
+//////////////////////////////////////////////////////////////////////////
+//z indexes (and other styles important for burger menu & sticky header functionality)
+///////////////////////////////////////////////////////////////////////////
+
+//z indexes
+header {
+    z-index: 100;
+}
+
+.menu-open-overlay {
+    z-index: 0; 
+}
+
+body,
+.body-container,
+nav,
+.nav-container,
+.nav-2,
+main {
+    z-index: 1;
+}
+
+.burger-menu-container {
+    z-index: -1000;
+}
+
+
+//prevents positioning issues and 'holes' in content
+body,
+.body-container,
+main,
+.main-content,
+.cards,
+.news-container,
+footer {
+    position: relative;
+}
+
+.body-container,
+.main-content,
+footer,
+header,
+nav,
+.nav-container {
+    background-color: v.$white;
+}
+

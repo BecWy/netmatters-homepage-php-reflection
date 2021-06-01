@@ -1,0 +1,167 @@
+@use "utilities/variables" as v;
+
+///////////////////////////////////////////////////////////////////////////////////////////
+//MAIN NAV BAR ///////////////////////////
+
+//BASE SETTINGS - nb nav bar is hidden for small screens
+.nav-2 {
+    border-bottom: 1.25px solid rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 98px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: v.$mainGrey;
+    position: relative; //position set to relative to align dropdown nav bars.
+    display: none;
+    & a {
+        height: 98px;
+    }
+    @media (min-width: v.$break-med) {
+        //Nav bar appears
+        display: flex;
+    }
+}
+
+// MENU BOXES
+.nav-box-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 154px;
+    color: v.$white;
+    border-left: 1px solid hsla(0,0,100%,.1);
+    border-right: 1px solid rgba(0,0,0,.25);
+    text-transform: uppercase;
+    & > * {
+        margin: 0 0;
+    }
+    @media (min-width: v.$break-lg) {  
+        width: 192px;
+    }
+}
+
+//box hover bg color
+@each $theme, $color in v.$themes {
+    .title-#{$theme}:hover {
+        background-color: $color;
+    }
+} 
+
+//Box pseudo borders. Can't be relative to title-web and title-cyber as it affects the dropdown nav-bars.
+.nav-box-text {
+    position: relative;
+}
+.title-web .nav-box-text::before {
+    content: "";
+    position: absolute;
+    height: 98px;
+    left: -1.5px;
+    top: 0;
+    border-left: 0.5px solid rgba(0,0,0,.25);
+}
+
+.title-cyber .nav-box-text::after {
+    content: "";
+    position: absolute;
+    height: 98px;
+    right: -1.5px;
+    top: 0;
+    border-right: 0.5px solid hsla(0,0%,100%,.1);
+}
+
+//NAV ICONS
+// Icon colors - base
+@each $theme, $color in v.$themes {
+    #nav-icon-#{$theme} {
+        color: $color;
+    }
+} 
+
+// Icon colors - hover
+@each $theme, $color in v.$themes {
+    .title-#{$theme}:hover .icon-parent > #nav-icon-#{$theme} {
+        color: v.$white;
+    }
+} 
+
+//FOR THE TEXT
+.nav-icon {
+    font-size: 20px; //23px in original code, but looks too big for these slightly different icons
+    line-height: 20px; //23px in original code, but looks too big for these icons
+    padding-bottom: 10px;
+}
+
+.nav-box-text > p {
+    padding-bottom: 1px;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: v.$regular;
+}
+
+.nav-box-text > h1 {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: v.$regular;
+} 
+
+///////////////////////////////////////////////////////////////////////////////////////
+//DROPDOWN NAV BARS ////////////////////////////////////////////////////////////////////
+.nav-dropdown {
+    display: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: absolute; //position aligned to nav-2
+    left: 0;
+    right: 0;
+    bottom: -44.5px; //height of the dropdown nav bars
+    line-height: 45px;
+    font-size: 13px; 
+    text-transform: uppercase;
+    z-index: 2; //prevents slight side border visibility in IE
+    @media (min-width: v.$break-lg) {  
+        font-size: 16px;
+    }
+}
+
+.secondary-nav-text {
+    width: 924px; //the same width as the 6 menu boxes 
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    letter-spacing: 0.4px;
+    margin: 0 auto;
+    & a {
+        padding: 10px 0px;
+        color: v.$white;
+        &:visited {
+            color: v.$white;
+        }
+    }
+    @media (min-width: v.$break-lg) {  
+        width: 1152px;
+    }
+}
+
+//DROPDOWN NAV. colors
+@each $theme, $color in v.$themes-secondary {
+    .title-#{$theme} > .nav-#{$theme} {
+        background-color: $color;
+        color: v.$white;
+        display: none; //HIDDEN        
+    }
+} 
+
+//DROPDOWN NAV. hover - display
+@each $theme, $color in v.$themes { 
+    .title-#{$theme}:hover > .nav-#{$theme} {
+        display: flex;  
+    }
+}

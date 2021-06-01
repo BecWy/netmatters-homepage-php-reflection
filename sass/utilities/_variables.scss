@@ -1,0 +1,141 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+//COLORS
+
+//PRIMARY THEME COLORS
+    $software-color1: #67809f;
+    $it-color1: #4183d7; 
+    $marketing-color1: #2ecc71;
+    $telecoms-color1: #d64541;
+    $web-color1: #926fb1;
+    $cyber-color1:  #f62459;
+    $training-color1: #926fb1;
+
+//SECONDARY THEME COLORS (MOSTLY FOR HOVER/ACTIVE AND DROPDOWN NAVS)
+    $software-color2: #566c88; 
+    $it-color2: #2a6ec6; 
+    $marketing-color2: #26ab5f; 
+    $telecoms-color2: #c42e2a; 
+    $web-color2: #7e57a0; 
+    $cyber-color2:  #e80a42; 
+    $training-color2: #7e57a0;
+
+//TERTIARY THEME COLORS (FOR HOVER/ACTIVE BUTTON BORDERS IN THE BANNER & other connected buttons ie Support button, NEWS text and buttons)
+    $software-color3: #4e627b;
+    $it-color3: #2665b5;
+    $marketing-color3: #239a55;
+    $telecoms-color3: #b32a27;
+    $web-color3: #735093;
+    $cyber-color3: #d4093c;
+    $training-color3: #735093;
+
+//ADDITIONAL COLORS
+    $mainGrey: #333645;  //used in various places as a background color - nav, footer etc. Also for text color.
+    $second-grey: #ccc; //news article borders, card borders
+    $grey-color3: #666; //news article text
+    //also use once: #d6d6d6;
+    //also use once: #555555; search bar input
+    //also use once: #5bc0de; search bar focus
+    $white: #fff;
+    $black: #000;
+    $nav-border-left: rgba(0,0,0,.25);
+    $nav-border-right: hsla(0,0%,100%,.1);
+    $nav-border-bottom: rgba(255, 255, 255, 0.7);
+
+//ADDITIONAL BUTTON COLORS
+    $contact-color1: #999aa2; //base
+    $contact-color2: #84858f; //hover and active
+    $contact-color3: #797a85; //hover and active border
+
+    $search-button-color1: #999aa2; //base
+    $search-button-color2: #7e808a; //hover
+
+    $cookie-settings-color1: #999aa2; //base
+    $cookie-settings-color2: #7e808a; //hover
+    $cookie-settings-color3: #797a85; //hover and active border
+
+    $menu-color1: #333645; //base  
+    $menu-color2: #22242e; //hover  //$color: #262834 
+    $menu-color3: #191a22; //hover and active border
+    $menu-color4: #3D404E; //hover on the side menu
+    
+
+    $culture-button-color1: #fff; //base
+    $culture-button-color2: #ebebeb; //hover
+    $culture-button-color3: #e0e0e0; //hover and active border 
+
+//SOCIAL BUTTONS
+    $social-base: rgba(0,0,0,.25);
+
+//EXTERNAL BRAND COLORS
+    $facebook: #3b5998;
+    $twitter: #00aced;
+    $linkedin: #0077b5;
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//BREAKPOINTS
+    $break-xs: 767px;
+    $break-sm: 768px;
+    $break-med: 993px;
+    $break-lg: 1260px;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//TYPOGRAPHY
+    $bold: 600;
+    $regular: 400;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//STYLING
+    $round-corner: 3px;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//TEXT CONTAINER WIDTHS //NOT IN USE YET
+    $width-xs: 95%; //using this for cookie popup
+    $width-sm: 720px;   ///some elements have padding included, these are 750px. TO figure out. 4 are 720px, 2 are 750px. Main footer is different - to check. Nav different too.
+    $width-med: 940px; ///some elements have padding included, these are 970px. TO figure out. 5 are 940px, 2 are 970px. Main footer is different - to check. Nav different too.
+    $width-lg:1170px; //5 containers with this width. Nav, footer and one other are different.
+
+
+
+
+////////////////////MAPS///////////////////////////////////////////////////////
+
+// // BREAKPOINTS
+$breakpoints: (
+    'xs': $break-xs,
+    'sm': $break-sm,
+    'med': $break-med,
+    'lg': $break-lg,
+);
+
+
+// COLOR THEMES
+$themes: (
+    'software': $software-color1,
+    'it': $it-color1,
+    'marketing': $marketing-color1,
+    'telecoms': $telecoms-color1,
+    'web': $web-color1,
+    'cyber': $cyber-color1,
+    'training': $training-color1,
+);
+
+$themes-secondary: (
+    'software': $software-color2,
+    'it': $it-color2,
+    'marketing': $marketing-color2,
+    'telecoms': $telecoms-color2,
+    'web': $web-color2,
+    'cyber': $cyber-color2,
+    'training': $training-color2,
+);
+
+$themes-tertiary: (
+    'software': $software-color3,
+    'it': $it-color3,
+    'marketing': $marketing-color3,
+    'telecoms': $telecoms-color3,
+    'web': $web-color3,
+    'cyber': $cyber-color3,
+    'training': $training-color3,
+);
+

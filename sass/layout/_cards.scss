@@ -1,0 +1,169 @@
+@use "utilities/variables" as v; //variables
+@use "utilities/mixins" as m; //mixins
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//CARDS ///////////////////////////////////////////////////////////////////////////////////
+.cards {
+    max-width: 95%;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center; 
+    padding-top: 20px;
+    padding-bottom: 50px;
+    @media (min-width: v.$break-sm) {  
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;   ////////////check justify settings
+        width: 720px; ///////////maintain equal margins
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media (min-width: v.$break-med) {
+        width: 940px;
+    }
+    @media (min-width: v.$break-lg) { 
+        width: 1170px; ///////////maintain equal margins
+    }
+}
+
+.card {
+    @include m.themes-bg-hov(v.$themes);
+    border: 1px solid v.$second-grey;
+    margin: 0 auto;
+    background-color: v.$white;
+    padding: 30px 30px;
+    margin-top: 30px;
+    width: 100%;
+    box-shadow: rgba(0,0,0, 0.1) 0px 3px 35px 0px;
+    border-radius: v.$round-corner;
+    & a {
+        width: 100%;
+        height: 100%;  
+    }
+    &:hover h2,
+    &:hover p {
+        color: v.$white;
+    }
+    &:hover h2::after {
+        border-bottom: 4px solid v.$white;
+    }
+}
+
+.card h2,
+.card p {
+    color: v.$mainGrey;  
+}
+
+.card h2 {
+    position: relative;
+    padding-bottom: 17px;
+    margin-top: 0;
+    margin-bottom: 11px;
+    font-size: 18px;
+    font-weight: v.$regular;
+    line-height: 19.8px;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            top: 35px;
+            left: calc(50% - 15px);
+            border-bottom: 3.5px solid v.$mainGrey;
+        }
+}
+
+.card p {
+    margin-bottom: 13px;
+    line-height: 22px;
+    font-size: 13px;
+}
+
+.card .fake-button {
+    padding: 5px 15px;
+    font-size: 17.008px;
+    line-height: 35px;
+}
+
+//formatting specifically for each breakpoint
+
+.card-row-1 {
+    @media (min-width: v.$break-sm) {
+        width: 100%; 
+        margin-left: 0;
+        margin-right: 0;
+    }
+    @media (min-width: v.$break-med) {
+        width: 293.333px;
+        height: 356px;
+        & > p {
+            height: 110px; 
+        }
+    }
+    @media (min-width: v.$break-lg) {  
+        width: 370px;
+        height: 312px;
+        & > p {
+            height: 66px;       
+        }
+    }
+}
+
+
+
+
+.card-row-2 {
+    @media (min-width: v.$break-sm) {
+        width: 343px;
+        & p {
+            height: 66px;
+        }
+    }
+    @media (min-width: v.$break-med) {
+        width: 455px;
+        & > p {
+            height: 44px;
+        }
+    }
+    @media (min-width: v.$break-lg) {  
+        width: 270px;
+        & >  p {
+            height: 66px;
+        } 
+    }
+    
+}
+
+@media (min-width: v.$break-sm) {
+    .card-telecoms,
+    .card-cyber {
+        margin-left: 0;
+    }
+
+    .card-web,
+    .card-training {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: v.$break-med) {
+    .card-software {
+        margin-left: 0;
+    }
+
+    .card-marketing {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: v.$break-lg) {  
+    .card-web {
+        margin-right: auto;
+    }
+
+    .card-cyber {
+        margin-left: auto;
+    }
+}

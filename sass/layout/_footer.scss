@@ -1,0 +1,453 @@
+@use "utilities/variables" as v;
+
+//MAIN-FOOTER //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.main-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 16px;
+    line-height: 22.8571px;
+    color: v.$white;
+    background-color: v.$mainGrey;
+    & a {
+        font-size: 13px;
+        line-height: 22px;
+        color: v.$white;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @media (min-width: v.$break-sm) {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-around;
+        height: 528px;
+    }
+    @media (min-width: v.$break-lg) {  
+        height: 309px;
+    }
+}
+
+.main-foot-cont {
+    height: 100%;
+    width: 100%;
+    padding-top: 47px;
+    padding-bottom: 43px;   
+    display: flex;
+    flex-wrap: wrap;
+    @media (min-width: v.$break-sm) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 750px;
+        margin: 0 auto;
+    }
+    @media (min-width: v.$break-med) {
+        width: 970px;
+        margin: 0 auto;
+    }
+    @media (min-width: v.$break-lg) {  
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+//Sub-sections
+.main-foot-section {
+    padding: 0px 15px;
+    width: 100%;
+    & > h2 {
+        text-transform: uppercase;
+        font-weight: v.$regular;
+        margin-top: 0;
+        font-size: 16px;
+        line-height: 17.6px;
+        width: 95%;
+    }
+    @media (min-width: v.$break-sm) {
+        width: 375px;
+        align-self: flex-start;
+    }
+    @media (min-width: v.$break-med) {
+        //Main footer sub-section widths 
+        width: 485px;
+    }
+    @media (min-width: v.$break-lg) { 
+        //Main footer switches to 4 column layout 
+        width: 300px;
+    }
+}
+
+.main-foot-section:not(:last-child) {
+    margin-bottom: 30px;
+    & > h2 {
+        margin-bottom: 26px;
+    }
+}
+
+.social {
+    height: 190px;
+    & > h2 {
+        margin-bottom: 0; //adjusted for social button top margin of 30px
+    }
+}
+
+.social-button li a {
+    @media (min-width: v.$break-sm) {
+        width: 157.5px;
+    }
+    @media (min-width: v.$break-med) {
+        width: 212.5px;
+    }
+    @media (min-width: v.$break-lg) {  
+        width: 120px;
+    }
+}
+  
+.main-foot-section > ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    & > li {
+        font-size: 13px;
+        line-height: 22px;
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//CLIENT FOOTER //larger screens only ////////////////////////////////////////////////////////////////////////////
+
+.client-footer {
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    background-color: v.$white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: inset 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+    @media (min-width: v.$break-sm) {
+        display: flex;
+    }
+}
+
+.footer-logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    @media (min-width: v.$break-sm) {
+        width: 720px;
+        margin: 0 auto;
+    }
+    @media (min-width: v.$break-med) {
+        width: 940px;
+        margin: 0 auto;
+    }
+    @media (min-width: v.$break-lg) {
+        width: 1170px;
+        margin: 0 auto;
+    }
+}
+
+//CLIENT LOGOS ////////////////////
+
+//medium screens 768px
+#busseys {
+    width: 121.1px;
+    height: 45.1px;
+    display: inline-block;
+    background: v.$white url("../images/external-branding/clients/busseys-bw.jpeg") no-repeat center;
+    background-size: cover;
+    &:hover {
+        background: v.$white url("../images/external-branding/clients/busseys-color.png") no-repeat center;
+        background-size: cover;
+    }
+    @media (min-width: v.$break-med) {
+        width: 168.7px;
+        height: 62.8px;
+    }
+    @media (min-width: v.$break-lg) {   //Switch to full size image sprite 
+        width: 188px; 
+        height: 70px;
+        background: url("../images/external-branding/clients/busseys-sprite.png") -10px -10px;
+        &:hover {
+            background: url("../images/external-branding/clients/busseys-sprite.png") -10px -100px;
+        }
+    }
+} 
+
+#crane {
+    width: 186px; 
+    height: 45px;
+    background: v.$white url("../images/external-branding/clients/crane-bw.jpeg") no-repeat center;
+    background-size: cover;
+    &:hover {
+        background: v.$white url("../images/external-branding/clients/crane-color.png") no-repeat center;
+        background-size: cover;
+    }
+    @media (min-width: v.$break-med) {
+        width: 260px; 
+        height: 62.8px;
+    }
+    @media (min-width: v.$break-lg) { //Switch to full size image sprite 
+        width: 287px; 
+        height: 70px;
+        background: url("../images/external-branding/clients/crane-sprite.png") -10px -10px;
+        &:hover {
+            background: url("../images/external-branding/clients/crane-sprite.png") -10px -100px;
+        }
+    } 
+        
+}
+
+#beat { 
+    width: 46.4px; 
+    height: 45.1px;
+    background: v.$white url("../images/external-branding/clients/beat-bw.jpeg") no-repeat center;    
+    background-size: cover;
+    &:hover {
+        background: v.$white url("../images/external-branding/clients/beat-color.png") no-repeat center;
+        background-size: cover;
+    }
+    @media (min-width: v.$break-med) {
+        width: 64.6px; 
+        height: 62.8px;
+    }
+    @media (min-width: v.$break-lg) {  //Switch to full size image sprite 
+        width: 72px; 
+        height: 70px;
+        background: url("../images/external-branding/clients/beat-sprite.png") -10px -10px;    
+        &:hover {
+            background: url("../images/external-branding/clients/beat-sprite.png") -102px -10px;
+        }
+    }
+}
+
+#northern-diver {
+    width: 207.5px; 
+    height: 45px;
+    background: v.$white url("../images/external-branding/clients/northern-diver-bw.jpeg") no-repeat center;
+    background-size: cover;
+    &:hover {
+        background: v.$white url("../images/external-branding/clients/northern-diver-color.png") no-repeat center;
+        background-size: cover;
+    }
+    @media (min-width: v.$break-med) {
+        width: 289px; 
+        height: 62.8px;
+    }
+    @media (min-width: v.$break-lg) {  //Switch to full size image sprite 
+        width: 322px; 
+        height: 70px;
+        background: url("../images/external-branding/clients/northern-diver-sprite.png") -10px -10px;
+        &:hover {
+            background: url("../images/external-branding/clients/northern-diver-sprite.png") -10px -100px;
+        }
+    }
+}
+
+//TOOLTIPS /////////////////////////////////////
+.client-footer .tooltip {
+    position: relative;
+    &:hover .tooltip-text {
+        display: inline-block;
+    }
+}
+
+.client-footer .tooltip-text {
+    display: none;
+    background-color: v.$mainGrey;
+    color: v.$white;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    line-height: 22px; 
+    margin-bottom: 50px; //positions the tooltip on the footer line
+    //Position the tooltip text
+    position: absolute;
+    z-index: 5;
+    width: 260px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -130px; //Use half of the width (120/2 = 60), to center the tooltip
+}
+
+//bottom arrow
+.client-footer .tooltip-text::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -36px;
+    border-width: 36px;
+    border-style: solid;
+    border-color: v.$mainGrey transparent transparent transparent;
+  }
+
+.footer-logos .tooltip-text p {
+    margin-bottom: 0;
+}
+
+.footer-logos .tooltip-title {
+    font-size: 18px;
+    padding-bottom: 17px;
+    margin-top: 0;
+    margin-bottom: 11px;
+    font-weight: v.$regular;
+    position: relative;
+}
+
+.footer-logos .tooltip-title::after {  //////////EXACT SAME SETTINGS AS THE CARDS - CREATE MIXIN?
+    content: "";
+    position: absolute;
+    width: 30px;
+    top: 35px;
+    left: calc(50% - 15px);
+    border-bottom: 3px solid v.$white;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//PARTNER FOOTER ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+.partner-footer {
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    height: 188px;
+    background-color: v.$white;
+    @media (min-width: v.$break-sm) {
+        display: flex;
+        width: 720px;
+        margin: 0 auto;
+    }
+    @media (min-width: v.$break-med) {
+        width: 940px;
+        margin: 0 auto;
+        height: 210px;
+    }
+    @media (min-width: v.$break-lg) { 
+        height: 188px;
+        width: 1170px;
+        margin: 0 auto;
+    }
+}
+
+//PARTNER LOGOS ///////////////////////
+#google {
+    width: 214px;
+    height: 70px;
+    background: v.$white url("../images/external-branding/other/google-color.png") no-repeat center;
+    background-size: cover;
+    align-self: center;
+}
+
+//medium screens 768px
+#microsoft {
+    width: 87.6px;
+    height: 53.3px;
+    background: v.$white url("../images/external-branding/other/microsoft-bw.jpeg") no-repeat center;
+    background-size: cover;
+    align-self: center;
+    @media (min-width: v.$break-med) {
+        width: 140.2px;
+        height: 85.3px;
+    }
+    @media (min-width: v.$break-lg) {  //Switch to full size image sprite 
+        width: 115px;
+        height: 70px;
+        background: url("../images/external-branding/other/microsoft-bw.jpeg");
+        background-size: cover;
+    }
+}
+
+#future-50 {
+    width: 33.5px; 
+    height: 53.3px;
+    background: v.$white url("../images/external-branding/other/future-50-bw.jpeg") no-repeat center;
+    background-size: cover;
+    align-self: center;
+    &:hover {
+        background: v.$white url("../images/external-branding/other/future-50-color.jpeg") no-repeat center;
+        background-size: cover;
+        align-self: center;
+    }
+    @media (min-width: v.$break-med) {
+        width: 69.2px; 
+        height: 110.1px;
+    }
+    @media (min-width: v.$break-lg) {  //Switch to full size image sprite 
+        width: 44px; 
+        height: 70px;
+        background: url("../images/external-branding/other/future-50-sprite.png") -10px -10px;
+        &:hover {
+            background: url("../images/external-branding/other/future-50-sprite.png") -74px -10px;
+        }
+    }
+}
+
+#qms {
+    width: 45.7px; 
+    height: 53.3px;
+    background: v.$white url("../images/external-branding/other/qms-bw.jpeg") no-repeat center;
+    background-size: cover;
+    align-self: center;
+    &:hover {
+        background: v.$white url("../images/external-branding/other/qms-color.jpeg") no-repeat center;
+        background-size: cover;
+        align-self: center;
+    }
+    @media (min-width: v.$break-med) {
+        width: 85.2px; 
+        height: 99.4px;
+    }
+    @media (min-width: v.$break-lg) {  //Switch to full size image sprite 
+        width: 60px; 
+        height: 70px;
+        background: url("../images/external-branding/other/qms-sprite.png") -10px -10px;
+        &:hover {
+            background: url("../images/external-branding/other/qms-sprite.png") -90px -10px;
+        }
+    }
+}
+
+#carbon-charter {
+    width: 133.3px; 
+    height: 53.3px;
+    background: v.$white url("../images/external-branding/other/carbon-charter-bw.jpeg") no-repeat center;
+    background-size: cover;
+    align-self: center;
+    &:hover {
+        background: v.$white url("../images/external-branding/other/carbon-charter-color.jpeg") no-repeat center;
+        background-size: cover;
+        align-self: center;
+    }
+    @media (min-width: v.$break-med) {
+        width: 200.2px; 
+        height: 80.1px;
+    }
+    @media (min-width: v.$break-lg) {  //Switch to full size image sprite 
+        width: 175px; 
+        height: 70px;
+        background: url("../images/external-branding/other/carbon-charter-sprite.png") -10px -10px;
+        &:hover {
+            background: url("../images/external-branding/other/carbon-charter-sprite.png") -10px -100px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+    

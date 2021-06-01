@@ -1,0 +1,207 @@
+@use "utilities/variables" as v;
+
+.banner {
+    background-color: v.$black;
+    background-size: cover; 
+    width: 100%; 
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+}
+
+.banner,
+.slides,
+.slide, 
+.slick-slide {
+    height: 531px;
+    @media (min-width: v.$break-sm) {
+        height: 589px;
+    }
+    @media (min-width: v.$break-med) {
+        height: 490px;
+    }
+    @media (min-width: v.$break-lg) {
+        height: calc(100vh - 208px);
+        min-height: 490px;
+    }
+}
+
+.slide {
+    width: 100%;
+}
+
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    width: 95%; //guess for the minute
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center; 
+    height: 100%;
+    @media (min-width: v.$break-med) {
+        max-width: 912px; 
+        align-items: flex-start;
+        text-align: left;
+    }
+    @media (min-width: v.$break-lg) {
+        max-width: 1152px; //1170px;
+    }
+}
+
+.slides .button {
+    @media (min-width: v.$break-sm) {
+        margin-top: 0;
+    }
+}
+
+.slide h1 {
+    margin: 0 auto;
+    margin-bottom: 25px;
+    font-size: 48px;
+    line-height: 52.8px;
+    color: v.$white;
+    font-weight: v.$regular;
+    text-transform: uppercase;
+    width: 95%;
+    @media (min-width: v.$break-med) {
+        margin-left: 0;
+    }
+}
+    
+.slide span {
+    margin: 0 auto;
+    margin-bottom: 35px;
+    font-size: 20px;
+    line-height: 36px;
+    color: v.$white;
+    font-weight: v.$regular;
+    width: 95%;
+    @media (min-width: v.$break-med) {
+        margin-left: 0;
+    }
+}
+
+
+.slide1 {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5975432409291841) 70%, rgba(0,0,0,0.39866368910845584) 100%),
+            url("../images/slides/slide-1.jpeg") no-repeat center; 
+    background-size: cover;
+}
+.slide2 {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5975432409291841) 70%, rgba(0,0,0,0.39866368910845584) 100%),
+            url("../images/slides/slide-2.jpeg") no-repeat center; 
+    background-size: cover;
+}
+.slide3 {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5975432409291841) 70%, rgba(0,0,0,0.39866368910845584) 100%),
+            url("../images/slides/slide-3.jpeg") no-repeat center; 
+    background-size: cover;
+}
+.slide4 {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5975432409291841) 70%, rgba(0,0,0,0.39866368910845584) 100%),
+            url("../images/slides/slide-4.jpeg") no-repeat center; 
+    background-size: cover;
+}
+.slide5 {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5975432409291841) 70%, rgba(0,0,0,0.39866368910845584) 100%),
+            url("../images/slides/slide-5.jpeg") no-repeat center; 
+    background-size: cover;
+}
+.slide6 {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5975432409291841) 70%, rgba(0,0,0,0.39866368910845584) 100%),
+            url("../images/slides/slide-6.jpeg") no-repeat center; 
+    background-size: cover;
+}
+
+
+@media (min-width: v.$break-med) {
+    .slide1 {
+        background: linear-gradient(270deg,transparent 25%,#000),
+                url("../images/slides/slide-1.jpeg") no-repeat center; 
+        background-size: cover;
+        background-position: top center;
+    }
+    .slide2 {
+        background: linear-gradient(270deg,transparent 25%,#000),
+                url("../images/slides/slide-2.jpeg") no-repeat center; 
+        background-size: cover;
+        background-position: top center;
+    }
+    .slide3 {
+        background: linear-gradient(270deg,transparent 25%,#000),
+                url("../images/slides/slide-3.jpeg") no-repeat center; 
+        background-size: cover;
+        background-position: top center;
+    }
+    .slide4 {
+        background: linear-gradient(270deg,transparent 25%,#000),
+                url("../images/slides/slide-4.jpeg") no-repeat center;
+        background-size: cover;
+        background-position: top center; 
+    }
+    .slide5 {
+        background: linear-gradient(270deg,transparent 25%,#000),
+                url("../images/slides/slide-5.jpeg") no-repeat center; 
+        background-size: cover;
+        background-position: top center;
+    }
+    .slide6 {
+        background: linear-gradient(270deg,transparent 25%,#000),
+                url("../images/slides/slide-6.jpeg") no-repeat center; 
+        background-size: cover;
+        background-position: top center;
+    }
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+/*Slick Carousel*/ /////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+.slick-dots {
+    bottom: 50px; //gap between the dots and the bottom of the slides
+    }
+    
+.slick-dots li button:before { 
+    font-size: 12px;
+    height: 100%;
+    width: 100%;
+    line-height: 20px;
+    padding: 0;
+    margin: 0;
+    border: 2px solid transparent; //this is the outer circle around the dot, affects dot placement if the border is removed.
+}
+
+.slick-dots li button:hover:before {
+//.slick-dots li button:focus:before {
+    opacity: 1; //I've been experimenting with this, was originally set to 1
+    color: v.$grey-color3; //i've added this to try and get the grey on hover
+}
+
+.slick-dots li button:before {
+    opacity: .75; //I've updated this, was .25
+    color: v.$second-grey; //i've updated this (was black), need to move into code above 
+}
+
+.slick-dots li.slick-active button:before { ////////////////this is the button that is currently active
+    opacity: 1; //i've updated this, was .75
+    color: v.$white; //i've updated this (was black)
+    border: 2px solid v.$white; //this is the outer circle around the dot
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+

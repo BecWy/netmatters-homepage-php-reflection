@@ -1,0 +1,130 @@
+@use "utilities/variables" as v;
+
+.cookies-outer-container {
+        position: fixed;
+        display: none;
+        left: 0;
+        top: 0;
+        overflow-y: scroll;
+        height: 100vh;
+        width: 100vw;//100vw; //z index is less than the burger menu, but higher than the rest of the page
+        z-index: 6;
+        background-color: rgba(0,0,0, 0.7);
+        @media (min-width: v.$break-sm) {
+            width: 100vw;
+            height: 100vh;
+            overflow-y: auto;
+        }
+}
+
+.cookies {
+    position: relative;
+    //display: none;
+    width: 90%;
+    margin: 30px auto;
+    background-color: v.$white;
+    border-radius: 5px;
+    @media (min-width: v.$break-sm) {
+        height: 505px;
+        width: 600px;
+        @media (max-height: 565px) {
+            margin: 30px auto;
+        }
+        @media (min-height: 566px) {
+            top: 50vh;
+            transform: translate(0, -50%);
+            margin: 0 auto;
+        }
+    }
+}
+
+.cookies p {
+    font-size: 16px;
+    color: v.$grey-color3;
+    margin-bottom: 25px;
+    line-height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cookies h3 {
+    font-size: 26px;
+    color: v.$mainGrey;
+    font-weight: 400;
+    margin: 0;
+    position: relative;
+    padding: 20px;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        border-bottom: 1px solid v.$second-grey;
+        width: 100%;
+    }
+}
+
+.cookieButtons {
+    position: relative;
+    padding: 20px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: v.$break-sm) {
+        flex-direction: row;
+    }
+    button {
+        text-transform: uppercase;
+        width: calc(100% - 20px);
+        margin: 15px auto; 
+        height: 47px;
+        padding: 5px 15px;
+        border-radius: v.$round-corner;
+        border: 1px solid transparent;
+        color: v.$white;
+        font-size: 17px;
+        outline: none;
+        cursor: pointer;
+        @media (min-width: v.$break-sm) {
+            width: 264px;
+        }
+
+        &:active {
+            box-shadow: inset 0 3px 5px rgb(0 0 0 / 13%)
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        border-top: 1px solid v.$second-grey;
+        width: 100%;
+    }
+}
+
+#cookies-settings-button {
+    background-color: v.$cookie-settings-color1;
+    margin: 0;
+    &:hover,
+    &:active {
+        background-color: v.$cookie-settings-color2;
+        border: 1px solid v.$cookie-settings-color3;
+    }
+}
+
+#cookies-button {
+    background-color: v.$web-color1;
+    margin: 0;
+    margin-top: 25px;
+    &:hover,
+    &:active {
+        background-color: v.$web-color2;
+        border: 1px solid v.$web-color3;
+    }
+    @media (min-width: v.$break-sm) {
+        margin-top: 0;
+    }
+}

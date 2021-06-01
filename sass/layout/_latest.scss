@@ -1,0 +1,389 @@
+@use "utilities/variables" as v;
+
+//////////////////////////////////////////////////////////////////////////////////
+//LATEST ///////////////////////////////////////////////////////////////////////////
+
+.latest {
+    width: 100%; //each news section is narrower
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+//News text
+.latest > h2 { 
+    position: relative;
+    text-transform: uppercase;
+    padding-top: 40px;  
+    padding-bottom: 40px; 
+    font-size: 20px;
+    line-height: 24px;
+    color: v.$mainGrey;
+    font-weight: v.$bold;
+    box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 0; 
+    margin-bottom: 0;
+    align-self: flex-start;
+    width: 100%;
+    @media (min-width: v.$break-sm) {
+        display: block;
+        width: 100%;
+    }
+}
+
+#latest-title {
+    max-width: 95%;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 70px;
+        left: 0px;
+        bottom: -40px;
+        border-bottom: 5px solid v.$mainGrey;
+    }
+    @media (min-width: v.$break-sm) {
+        margin: 0 auto;
+    }
+}
+
+.news-container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    max-width: 95%;
+    margin-left: 15px;
+    margin-right: 15px;
+    @media (min-width: v.$break-sm) {
+        display: flex;
+        flex-direction: row;
+        width: 750px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    @media (min-width: v.$break-med) {
+        width: 970px;
+    }
+    @media (min-width: v.$break-lg) { 
+        width: 1170px;
+    }
+}
+
+.news {
+    width: 100%;
+    margin: 0px auto;  
+    padding: 15px 0px;
+    @media (min-width: v.$break-sm) {
+        width: 345px;
+    }
+    @media (min-width: v.$break-med) {
+        width: 455px;
+        > a > img {
+            display: none;
+        }
+    }
+    @media (min-width: v.$break-lg) {  
+        width: 370px;
+    }
+}
+
+.news-1 {
+    @media (min-width: v.$break-sm) {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+    @media (min-width: v.$break-lg) {  
+        margin-right: 15px;
+        margin-left: 0;
+    }
+}
+
+.news-2 {
+    @media (min-width: v.$break-sm) {
+        margin-left: 15px;
+        margin-right: auto;
+    }
+    @media (min-width: v.$break-lg) {  
+        margin-left: auto;
+        margin-right: auto; 
+    }
+}
+
+
+.news-3 {
+    @media (min-width: v.$break-sm) {
+        display: none; //3rd news item hidden
+    }
+    @media (min-width: v.$break-lg) { 
+        display: inline-block; //3rd news item displayed
+        margin-left: 15px;
+        margin-right: 0;
+    }
+}
+
+.news-text {
+    padding: 30px; 
+    font-size: 13px;
+    line-height: 18px;
+    color: v.$grey-color3;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 35px 0px;
+    border-radius: 0px 0px 3px 3px;
+    border: 1px solid v.$second-grey;
+    margin-top: -6px; 
+    @media (min-width: v.$break-med) {
+        border-top: none;
+        margin-top: -3px;
+    }
+}
+
+.news-text > h3 {
+    margin-top: 0; 
+    & > a {
+        font-size: 16px;
+        line-height: 24px;   
+        font-weight: v.$bold;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @media (min-width: v.$break-sm) {
+        height: 48px; //standardising title height so doesn't matter if title is 1 or 2 lines
+    }
+}
+
+.news-text-1 > h3 > a {
+    color: v.$web-color1;
+}
+
+.news-text-2 > h3 > a,
+.news-text-3 > h3 > a {
+    color: v.$it-color1;
+}
+
+
+.news-text > p {
+    margin-bottom: 25px; 
+    font-size: 13px;
+    line-height: 22px;
+    color: v.$grey-color3;
+    @media (min-width: v.$break-sm) {
+        height: 66px; //standardising p height so doesn't matter if text is 2 or 3 lines
+    }
+}
+
+.posted-by {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #d6d6d6;
+    padding-top: 30px; 
+    margin-top: 30px; 
+    font-size: 14px;
+    line-height: 20px;
+    color: v.$grey-color3;
+    width: 100%;
+    @media (min-width: v.$break-sm) {
+        width: 308px;
+    }
+}
+
+.posted-by-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    & p {
+        color: v.$grey-color3;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 20px;
+        margin-right: 0;
+        font-size: 14px;
+        line-height: 22px;
+        & strong {
+            color: v.$mainGrey;
+            font-weight: v.$bold;
+        }
+    }
+    @media (min-width: v.$break-sm) {
+        width: 235px;
+    }
+}   
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//News images///////////////////////////////////////////////////////////////////////////////////
+.news img { //////////////small sceens
+    border-radius: 3px 3px 0px 0px;
+    border: 1px solid v.$second-grey;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.news-image-parent { //////////////larger screens only. //container for animation
+    border-radius: 3px 3px 0px 0px;
+    border: 1px solid v.$second-grey;
+    max-width: 100%;
+    display: none;
+    @media (min-width: v.$break-med) {
+        display: inline-block;
+        width: 455px;
+        height: 261.844px;
+        overflow: hidden;
+        &:hover > .news-image-child {
+            transform: scale(1.075);  
+            opacity: .8;
+        }
+    }
+    @media (min-width: v.$break-lg) { 
+        width: 370px; 
+        height: 212.708px;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: v.$break-med) {
+    .news-image-child {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 0 0;
+        margin: 0 0;
+        border-radius: 3px 3px 0px 0px;
+        transition: all .25s cubic-bezier(.215,.61,.355,1);
+        opacity: 1;
+    }
+
+    .news-1-image-child {           
+        background: url("../images/latest/news-1.jpeg") no-repeat center;
+        background-size: cover;
+    }
+
+    .news-2-image-child {           
+        background: url("../images/latest/news-2.jpeg") no-repeat center;
+        background-size: cover;
+    }
+    
+    .news-3-image-child {           
+        background: url("../images/latest/news-3.jpeg") no-repeat center;
+        background-size: cover;
+    }
+}
+
+.thumbnail {
+    width: 47px; 
+    min-width: 47px;
+    flex: 0 0;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    & img {
+        height: 47px;
+        width: 47px;
+        border-radius: 50%;
+        margin-top: 0;
+        border: none;
+        justify-self: center;
+        align-self: center;
+        flex: 0 0;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//Tooltips ///////////////////////////////////////////////////////////////////////////////////////////
+
+.news {
+    position: relative;
+}
+
+.news .tooltip {
+    position: absolute;
+    margin: 0 0;
+    padding: 0 0;
+    z-index: 1;
+    right: 0px;
+    top: 25px;
+    &:hover h3 {
+        text-decoration: underline;
+    }
+    &:hover .tooltip-text {
+        display: flex;
+    }
+}
+
+.news .tooltip h3 {
+    margin: 0 0;
+    text-transform: uppercase;
+    font-size: .75rem;
+    color: v.$white;
+    padding: 5px 10px;
+    font-weight: v.$bold;
+}
+
+.news-1 .tooltip h3 {
+    background-color: v.$web-color1;
+}
+
+.news-2 .tooltip h3,
+.news-3 .tooltip h3 {
+    background-color: v.$it-color1;
+}
+
+.news .tooltip-text {
+    display: none;
+    background-color: v.$mainGrey;
+    color: v.$white;
+    text-align: center;
+    height: 51.5px;
+    padding: 5px 10px;
+    font-size: 11.5px;
+    line-height: 15px; 
+    justify-content: center;
+    align-items: center;
+    //positioning tooltip text
+    position: absolute;
+    z-index: 2;
+    width: 140px;
+    top: -60px;
+    right: -15px;          //50%;
+    margin-right: 0px; //Use half of the width (i.e. 120/2 = 60), to center the tooltip
+    & > p {
+        max-width: 120px;
+        padding: 0 0;
+        margin: 0 0;
+    }
+    //bottom arrow
+    &::after {
+        content: " ";
+        position: absolute;
+        top: 100%; // places it at the bottom of the tooltip
+        left: calc(50% + 20px);
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: v.$mainGrey transparent transparent transparent;
+    }
+    @media (min-width: v.$break-sm) {
+        width: 176px;
+        right: 50%;
+        margin-right: -88px;
+        & > p {
+            max-width: 113px; //////////////keeps all text visible
+        }
+        //bottom arrow
+        &::after {
+            left: 50%;
+            margin-left: -5px;
+        }
+    }
+    @media (min-width: v.$break-med) {
+        width: 200px;
+        margin-right: -100px;
+    }
+}
+
+
+
