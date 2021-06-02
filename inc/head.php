@@ -6,7 +6,4 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/58da4f92e2.js" crossorigin="anonymous"></script>  
     <link href="dist/css/hamburgers.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="js/slick/slick.css">
-    <link rel="stylesheet" href="js/slick/slick-theme.css"> 
-    <link href="css/style.css" rel="stylesheet">
-</head>
+    

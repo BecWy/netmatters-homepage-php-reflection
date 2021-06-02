@@ -11,20 +11,24 @@
 @use 'base/normalize';
 @use 'base/base';
 
-// Layout Styles
+// Layout Styles All Pages
 @use 'layout/nav';
 @use 'layout/header';
-@use 'layout/burger-menu';
-@use 'layout/cards';
-@use 'layout/intro';
-@use 'layout/latest';   
+@use 'layout/burger-menu'; 
 @use 'layout/footer';
+//Index
+@use 'layout/index/cards';
+@use 'layout/index/intro';
+@use 'layout/index/latest';  
+//Contact
 
 // Component Styles
 @use 'components/buttons';
 @use 'components/icons';
 @use 'components/slider';
 @use 'components/cookies.scss';
+@use 'components/maps.scss';
+@use 'components/contact-form.scss';
 
 
 //JS related scss

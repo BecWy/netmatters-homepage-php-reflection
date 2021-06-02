@@ -2,7 +2,11 @@
 <html lang="en">
     <!-- head -->
     <?php include "./inc/head.php"; ?>
-   
+        <link rel="stylesheet" href="js/slick/slick.css">
+        <link rel="stylesheet" href="js/slick/slick-theme.css"> 
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
     <body>
         <!-- side-menu -->
         <?php include "./inc/side-menu.php"; ?>
