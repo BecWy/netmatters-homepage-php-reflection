@@ -88,13 +88,14 @@
     $round-corner: 3px;
 
 //////////////////////////////////////////////////////////////////////////////////////////
-//TEXT CONTAINER WIDTHS //NOT IN USE YET
+//TEXT CONTAINER WIDTHS //NOT IN USE EVERYWHERE YET
     $width-xs: 95%; //using this for cookie popup
     $width-sm: 720px;   ///some elements have padding included, these are 750px. TO figure out. 4 are 720px, 2 are 750px. Main footer is different - to check. Nav different too.
     $width-med: 940px; ///some elements have padding included, these are 970px. TO figure out. 5 are 940px, 2 are 970px. Main footer is different - to check. Nav different too.
     $width-lg:1170px; //5 containers with this width. Nav, footer and one other are different.
 
-
+    $width-med-v2: 926px; //nav width & contact page
+    $width-lg-v2: 1152px; //nav width & contact page
 
 
 ////////////////////MAPS///////////////////////////////////////////////////////

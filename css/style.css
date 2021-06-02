@@ -2421,6 +2421,7 @@ body {
   width: 100%;
   display: none;
   border-top: solid 1px #333645;
+  margin: 0 auto;
 }
 @media (min-width: 768px) {
   .breadcrumbs {
@@ -2430,7 +2431,6 @@ body {
 @media (min-width: 993px) {
   .breadcrumbs {
     border-top: none;
-    display: block;
   }
 }
 .breadcrumbs p {
@@ -2438,25 +2438,67 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 768px) {
+  .breadcrumbs p {
+    width: 720px;
+  }
+}
+@media (min-width: 993px) {
+  .breadcrumbs p {
+    width: 926px;
+  }
+}
+@media (min-width: 1260px) {
+  .breadcrumbs p {
+    width: 1152px;
+  }
+}
 
 .contact-container {
   box-shadow: inset 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+}
+
+.contact-inner-container {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1260px) {
+  .contact-inner-container {
+    flex-direction: row-reverse;
+  }
 }
 
 .contact-details {
   width: 95%;
   margin: 0 auto;
 }
+@media (min-width: 768px) {
+  .contact-details {
+    width: 720px;
+  }
+}
+@media (min-width: 993px) {
+  .contact-details {
+    width: 926px;
+  }
+}
+@media (min-width: 1260px) {
+  .contact-details {
+    width: 400px;
+  }
+}
 
 .contact-details-title {
   background-color: #333645;
-  height: 78px;
-  margin-bottom: 50px;
+  height: 87px;
+  margin-bottom: 40px;
   width: 100%;
 }
 @media (min-width: 993px) {
   .contact-details-title {
     background-color: transparent;
+    padding-top: 25px;
+    margin-bottom: 15px;
   }
 }
 .contact-details-title h1 {
@@ -2466,9 +2508,20 @@ body {
   padding: 24px 0;
   margin: 0 auto;
 }
+@media (min-width: 768px) {
+  .contact-details-title h1 {
+    width: 720px;
+  }
+}
 @media (min-width: 993px) {
   .contact-details-title h1 {
+    width: 926px;
     color: #333645;
+  }
+}
+@media (min-width: 1260px) {
+  .contact-details-title h1 {
+    width: 1152px;
   }
 }
 
@@ -2485,6 +2538,10 @@ body {
   color: #926fb1;
   font-size: 26px;
   font-weight: 600;
+}
+
+.contact-details .br {
+  margin-bottom: 40px;
 }
 
 #it-support-down-icon {
@@ -3359,54 +3416,112 @@ body {
 }
 
 form {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   width: 100%;
-  border: 2px solid red;
+}
+@media (min-width: 768px) {
+  form {
+    width: 720px;
+  }
+}
+@media (min-width: 993px) {
+  form {
+    width: 926px;
+  }
+}
+@media (min-width: 1260px) {
+  form {
+    width: 800px;
+  }
 }
 
 #contact-fieldset {
   width: 100%;
   max-width: 600px;
-  margin: 30px auto;
-  border: 2px solid turquoise;
+  margin: 30px 0;
+  border: none;
+}
+@media (min-width: 768px) {
+  #contact-fieldset {
+    padding-left: 0;
+  }
 }
 
 .contact-field {
   width: 100%;
   max-width: 600px;
-  padding: 5px;
+  padding: 5px 15px;
   margin-bottom: 25px;
+  height: 47px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+.contact-field:focus {
+  outline: 0;
+  border: 0.5px solid #5bc0de;
+  box-shadow: rgba(91, 192, 222, 0.6) 0px 0px 8px 0px;
 }
 
 .contact-label {
   display: block;
   color: #333645;
   margin-bottom: -12px;
+  font-weight: 600;
+}
+.contact-label .required {
+  color: #d24d57;
+}
+
+#gdpr-div .contact-label {
+  line-height: 32px;
 }
 
 #message {
-  height: 150px;
+  height: 100px;
 }
 
 #button-div {
-  width: 100%;
+  width: 95%;
   display: flex;
   margin: 30px auto 50px auto;
-  max-width: 600px;
-  border: 2px solid teal;
+}
+@media (min-width: 768px) {
+  #button-div {
+    width: 720px;
+    margin-left: 0;
+  }
+}
+@media (min-width: 993px) {
+  #button-div {
+    width: 926px;
+  }
+}
+@media (min-width: 1260px) {
+  #button-div {
+    width: 800px;
+  }
 }
 #button-div button {
   background-color: #333645;
-  border: none;
+  border: 1px solid #333645;
   border-radius: 3px;
-  padding: 15px 50px;
+  padding: 15px 5px;
   color: #fff;
   text-transform: uppercase;
+  width: 150px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.4;
 }
 #button-div button:hover {
   cursor: pointer;
-  opacity: 0.9;
+  background-color: #22242e;
+  border: 1px solid #191a22;
+}
+#button-div button:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.13);
 }
 
 #gdpr-div {
@@ -3422,10 +3537,11 @@ form {
 }
 
 #privacy {
-  font-weight: bold;
+  font-weight: 600;
 }
 #privacy a {
-  color: #fff;
+  color: #333645;
+  text-decoration: underline;
 }
 
 .form-submitted {

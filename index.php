@@ -1,3 +1,7 @@
+<?php
+$pageTitle = "Netmatters | Full Service Digital Agency | Norwich, Norfolk";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <!-- head -->
