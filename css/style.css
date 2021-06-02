@@ -2416,6 +2416,148 @@ body {
   background-color: teal;
 }
 
+.breadcrumbs {
+  font-size: 13px;
+  width: 100%;
+  display: none;
+  border-top: solid 1px #333645;
+}
+@media (min-width: 768px) {
+  .breadcrumbs {
+    display: block;
+  }
+}
+@media (min-width: 993px) {
+  .breadcrumbs {
+    border-top: none;
+    display: block;
+  }
+}
+.breadcrumbs p {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-container {
+  box-shadow: inset 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.contact-details-title {
+  background-color: #333645;
+  height: 78px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+@media (min-width: 993px) {
+  .contact-details-title {
+    background-color: transparent;
+  }
+}
+.contact-details-title h1 {
+  color: #fff;
+  font-weight: 400;
+  width: 95%;
+  padding: 24px 0;
+  margin: 0 auto;
+}
+@media (min-width: 993px) {
+  .contact-details-title h1 {
+    color: #333645;
+  }
+}
+
+.contact-details p {
+  color: #666;
+}
+
+.contact-details p strong {
+  font-weight: 600;
+  color: #333645;
+}
+
+.contact-details a {
+  color: #926fb1;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+#it-support-down-icon {
+  color: #333645;
+}
+
+#it-support-down-link {
+  cursor: pointer;
+  font-weight: 600;
+  color: #333645;
+  font-size: 16px;
+}
+#it-support-down-link:hover, #it-support-down-link:active {
+  text-decoration: underline;
+}
+
+.offices {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .offices {
+    flex-direction: row;
+  }
+}
+
+.office-wymondham,
+.office-gorleston {
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .office-wymondham,
+.office-gorleston {
+    width: 330px;
+  }
+}
+@media (min-width: 993px) {
+  .office-wymondham,
+.office-gorleston {
+    width: 440px;
+  }
+}
+@media (min-width: 1260px) {
+  .office-wymondham,
+.office-gorleston {
+    width: 555px;
+  }
+}
+
+.wymondham-address,
+.gorleston-address {
+  padding: 30px;
+}
+
+.home-icon {
+  line-height: 58px;
+  font-size: 28px;
+  height: 58px;
+  width: 58px;
+  color: #fff;
+  background-color: #333645;
+  border-radius: 50%;
+}
+
 .button-software {
   color: #fff;
   background-color: #67809f;
@@ -3176,36 +3318,32 @@ body {
   }
 }
 
-.wymondham-map {
-  height: 600px;
+.wymondham-map,
+.gorleston-map {
+  height: 300px;
 }
 
 #mapid {
   width: 100%;
   height: 225px;
-  border: 0.5px solid grey;
 }
 @media (min-width: 768px) {
   #mapid {
-    width: 60%;
     height: 225px;
   }
 }
 @media (min-width: 993px) {
   #mapid {
-    width: 60%;
     height: 250px;
   }
 }
 @media (min-width: 1260px) {
   #mapid {
-    width: 65%;
     height: 300px;
   }
 }
 
 .contact-form-container {
-  background-color: grey;
   margin: 0 auto;
   width: 100%;
   margin: 0 auto;
@@ -3216,25 +3354,22 @@ body {
   justify-content: center;
 }
 .contact-form-container h3 {
-  color: #fff;
+  color: #333645;
   margin-top: 30px;
-}
-.contact-form-container .h3-title:first-child {
-  border: none;
-  border-bottom: 1.5px solid red;
 }
 
 form {
   margin: 0;
   padding: 0;
   width: 100%;
+  border: 2px solid red;
 }
 
 #contact-fieldset {
   width: 100%;
   max-width: 600px;
   margin: 30px auto;
-  border: none;
+  border: 2px solid turquoise;
 }
 
 .contact-field {
@@ -3246,7 +3381,7 @@ form {
 
 .contact-label {
   display: block;
-  color: #fff;
+  color: #333645;
   margin-bottom: -12px;
 }
 
@@ -3257,14 +3392,17 @@ form {
 #button-div {
   width: 100%;
   display: flex;
-  margin-bottom: 50px;
+  margin: 30px auto 50px auto;
+  max-width: 600px;
+  border: 2px solid teal;
 }
 #button-div button {
-  margin: 0 auto;
-  background-color: red;
+  background-color: #333645;
   border: none;
+  border-radius: 3px;
   padding: 15px 50px;
   color: #fff;
+  text-transform: uppercase;
 }
 #button-div button:hover {
   cursor: pointer;

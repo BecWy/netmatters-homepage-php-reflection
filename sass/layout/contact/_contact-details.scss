@@ -1,0 +1,135 @@
+@use "utilities/variables" as v; //variables
+
+
+.breadcrumbs {
+    //padding: 14px 0 13px;
+    font-size: 13px;
+    width: 100%;
+    display: none;
+    border-top: solid 1px v.$mainGrey;
+    @media (min-width: v.$break-sm) { 
+        display: block;
+    }
+    @media (min-width: v.$break-med) { 
+        border-top: none;
+        display: block;
+    }
+    p {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.contact-container {
+    box-shadow: inset 0px 5px 35px 0px rgb(0 0 0 / 10%);
+}
+
+.contact-details {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.contact-details-title {
+    background-color: v.$mainGrey;
+    height: 78px;
+    margin-bottom: 50px;
+    width: 100%;
+    
+    @media (min-width: v.$break-med) { 
+        background-color: transparent;
+    }
+    h1 {
+        color: v.$white;
+        font-weight: v.$regular;
+        width: 95%;
+        padding: 24px 0;
+        margin: 0 auto;
+        @media (min-width: v.$break-med) { 
+            color: v.$mainGrey;
+        }
+    }
+    //margin-bottom: 50px;
+    //margin-top: 0;
+}
+
+.contact-details p {
+    color: v.$grey-color3;
+}
+
+.contact-details p strong {
+    font-weight: v.$bold;
+    color: v.$mainGrey;
+}
+
+.contact-details a {
+    color: v.$web-color1;
+    font-size: 26px;
+    font-weight: v.$bold;
+}
+
+#it-support-down-icon {
+    color: v.$mainGrey;
+}
+
+#it-support-down-link {
+    cursor: pointer;
+    font-weight: v.$bold;
+    color: v.$mainGrey;
+    font-size: 16px;
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// OFFICES ////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+.offices {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: v.$break-sm) { 
+        flex-direction: row;
+    }
+}
+
+.office-wymondham,
+.office-gorleston {
+    background-color: v.$white;
+    text-align: center;
+    box-shadow: 0 3px 35px rgb(0 0 0 / 10%);
+    border: 1px solid v.$second-grey;
+    border-radius: v.$round-corner;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 100%;
+    @media (min-width: v.$break-sm) { 
+        width: 330px;
+    }
+    @media (min-width: v.$break-med) { 
+        width: 440px;
+    }
+    @media (min-width: v.$break-lg) { 
+        width: 555px;
+    }
+}
+
+.wymondham-address,
+.gorleston-address {
+    padding: 30px;
+}
+
+.home-icon {
+    line-height: 58px;
+    font-size: 28px;
+    height: 58px;
+    width: 58px;
+    color: v.$white;
+    background-color: v.$mainGrey;
+    border-radius: 50%;
+}

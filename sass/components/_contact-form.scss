@@ -1,9 +1,7 @@
 @use "utilities/variables" as v; //variables
 
 
-
 .contact-form-container {
-    background-color: grey;
     margin: 0 auto;
     width: 100%;
     margin: 0 auto;
@@ -13,12 +11,8 @@
     flex-direction: column;
     justify-content: center;
     h3 {
-        color: v.$white;
+        color: v.$mainGrey;
         margin-top: 30px;
-    }
-    .h3-title:first-child {
-            border: none;
-            border-bottom: 1.5px solid red;
     }
 }
 
@@ -26,13 +20,14 @@ form {
     margin: 0;
     padding: 0;
     width: 100%;
+    border: 2px solid red;
 }
 
 #contact-fieldset {
     width: 100%;
     max-width: 600px;
     margin: 30px auto;
-    border: none;
+    border: 2px solid turquoise;
 }
 
 .contact-field {
@@ -44,7 +39,7 @@ form {
 
 .contact-label {
     display: block;
-    color: v.$white;
+    color: v.$mainGrey;
     margin-bottom: -12px;
 }
 
@@ -55,14 +50,18 @@ form {
 #button-div {
     width: 100%;
     display: flex;
-    margin-bottom: 50px;
+    margin: 30px auto 50px auto;
+    max-width: 600px;
+    border: 2px solid teal;
 
     button {
-        margin: 0 auto;
-        background-color: red;
+        //margin: 0 auto;
+        background-color: v.$mainGrey;
         border: none; 
+        border-radius: v.$round-corner;
         padding: 15px 50px;
         color: v.$white;
+        text-transform: uppercase;
         &:hover {
             cursor: pointer;
             opacity: 0.9;
