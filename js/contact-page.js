@@ -1,13 +1,13 @@
 //contact page event listener
 const itSupportDownLink = document.querySelector("#it-support-down-link");
 const itSupportDown = document.querySelector("#it-support-down");
-
+const successMessage = document.querySelector(".success-message");
+const failMessage = document.querySelector(".fail-message");
+const messageP = document.querySelector(".message-p");
 
 document.addEventListener('DOMContentLoaded', () => {
     itSupportDown.style.display = "none";
 })
-
-
 
 
 itSupportDownLink.addEventListener('click', ()=> {

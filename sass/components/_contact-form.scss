@@ -67,7 +67,7 @@ form {
     }
 }
 
-#gdpr-div .contact-label {
+#form-checkbox-div .contact-label {
     line-height: 32px;
 }
 
@@ -111,12 +111,12 @@ form {
     }
 }
 
-#gdpr-div {
+#form-checkbox-div {
     display: flex;
     flex-direction: row;
 }
 
-#gdpr {
+#form-checkbox {
     height: 30px;
     width: 30px;
     margin: auto 0;
@@ -133,22 +133,28 @@ form {
 
 
 
-.form-submitted {
-    background-color: grey;
+.success-message,
+.fail-message {
+    background-color: v.$software-color1;
     height: 50px;
-    align-items: center;
-    text-align: center;
+    display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 30px;
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 2000;
-    transition: all 1.5s ease-out; //this is for sliding the message up offscreen in the JS
-}
-
-#success-message {
-    color: v.$white;
+    transition: all 1.5s ease-out; 
+    p {
+        color: v.$white;
+        transition: all .5s ease-out; 
+        width: v.$width-xs;
+        @media (min-width: v.$break-sm) { 
+            width: v.$width-sm;
+        }
+        @media (min-width: v.$break-med) {
+            width: 100%;
+        }
+    }
+    @media (min-width: v.$break-med) { 
+        background-color: v.$web-color1;
+        text-align: center;
+    }
 }

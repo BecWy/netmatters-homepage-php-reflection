@@ -32,7 +32,7 @@
                 <h2>Website</h2>
                 <ul>
                     <li><a href="#">Sitemap</a></li>
-                    <li>&#169; Copyright Netmatters Ltd. 2020</li>
+                    <li>&#169; Copyright Netmatters Ltd. <?php echo date("Y");?></li>
                     <li>All rights reserved</li>
                 </ul>
             </div>  <!-- end website -->

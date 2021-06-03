@@ -1,15 +1,15 @@
 <?php
+include("./contact-form.php");
+
 $pageTitle = "Contact Us | Netmatters";
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
     <!-- head -->
     <?php include "./inc/head.php"; ?>
-        <!-- leaflet map -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin=""/>
         <!-- main stylesheet -->
         <link href="css/style.css" rel="stylesheet">
     </head>
@@ -30,6 +30,53 @@ $pageTitle = "Contact Us | Netmatters";
                         / How Can We Help You?
                     </p>
                 </div>
+
+                <?php //display success message
+                if(isset($_GET['status'])) {
+                    if( $_GET['status'] == 'success') {
+                        echo '<div class="success-message">';
+                        echo '<p class="message-p">Thank you for your enquiry. We will be in touch shortly.</p>';
+                        echo '</div>';
+                        ?>
+
+                        <script> 
+                            setTimeout( () => { 
+                                messageP.style.opacity = "0";
+                            }, 6700);
+                            setTimeout( () => { 
+                                successMessage.style.height = "0px";
+                                successMessage.style.opacity = "0";
+                            }, 7000);
+                            setTimeout( () => { 
+                                successMessage.style.display = "none";
+                            }, 8500);
+                        </script>
+
+
+                    <?php
+                    } elseif($_GET['status'] == 'unsuccessful') {
+                        echo '<div class="fail-message">';
+                        echo '<p class="message-p">Enquiry submission unsuccessful. Please try again.</p>';
+                        echo '</div>';
+                    }
+                    ?>
+                    <script> 
+                        setTimeout( () => { 
+                            failMessage.style.height = "0px";
+                            //need to fade the text opacity at the same time as the height
+                            //at the moment fading the whole message
+                            messageP.style.opacity = "0";
+                            failMessage.style.opacity = "0";
+                        }, 7000);
+                        setTimeout( () => { 
+                            failMessage.style.display = "none";
+                        }, 8500);
+                    </script>
+
+                <?php
+                }
+                ?>
+
 
                 <div class="contact-container">
                     <div class="contact-details-title">
@@ -57,10 +104,7 @@ $pageTitle = "Contact Us | Netmatters";
                         </div> <!-- end contact-details -->
 
                         <div class="contact-form-container">
-                            <div class="form-submitted">
-                                <p id="success-message">Thank you for your message. We will respond to your enquiry as soon as possible</p>
-                            </div><!-- end form-submitted -->
-                            <form action="contact.html">
+                            <form action="contact.php" method="post">
                                 <fieldset id="contact-fieldset">
                                     <!-- <legend><span class="number">1</span>Your details</legend> -->
                                     <label for="name" class="contact-label">Your Name <span class="required">*</span></label><br>
@@ -78,9 +122,9 @@ $pageTitle = "Contact Us | Netmatters";
                                     <label for="message" class="contact-label">Message <span class="required">*</span></label><br>
                                     <textarea id="message" name="user_message" class="contact-field" required="required"></textarea><br>
                                     
-                                    <div id="gdpr-div">
-                                        <input type="checkbox" id="gdpr" value="NA" name="user_interest" required="required">
-                                        <label for="gdpr" id="checkbox-label" class="contact-label">Please tick this box if you wish to receive marketing information from us. Please see our <span id="privacy"><a>Privacy Policy</a></span> for more information on how we use your data</label><br>
+                                    <div id="form-checkbox-div"> <!--change these names/classes to marketing. I've removed required already -->
+                                        <input type="checkbox" id="form-checkbox" value="NA" name="marketing_yes">
+                                        <label for="form-checkbox" id="checkbox-label" class="contact-label">Please tick this box if you wish to receive marketing information from us. Please see our <span id="privacy"><a>Privacy Policy</a></span> for more information on how we use your data</label><br>
                                     </div>
 
                                 </fieldset>  
@@ -108,7 +152,7 @@ $pageTitle = "Contact Us | Netmatters";
                                 <p>NR18 0WZ</p>
                                 <br>
                             </div> <!-- end wymondham-address -->
-                            <div class="wymondham-map">
+                            <div class="wymondham-map" id="wymondham-map">
                                 <div id="mapid">MAP</div>
                             </div> <!-- end wymondham-map -->
                         </div> <!-- end office-wymondham -->
@@ -123,8 +167,8 @@ $pageTitle = "Contact Us | Netmatters";
                                 <p>NR31 7RA</p>
                                 <br>
                             </div> <!-- end gorleston-address -->
-                            <div class="gorleston-map">
-                            
+                            <div class="gorleston-map" id="gorleston-map">
+                                
                             </div> <!-- end gorleston-map -->
                         </div> <!-- end office-gorleston -->
                     </div> <!-- end offices -->
@@ -140,11 +184,14 @@ $pageTitle = "Contact Us | Netmatters";
 
         </div> <!-- end body-container -->
 
-        <!-- leaflet JS -->
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
+
+        <!-- <script src="./js/map.js"></script> -->
         <script src="./js/map.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSBDeMEwX9MBMEDCavlK03yATT7_vLojc&callback=initMap&libraries=&v=weekly"
+            async
+        ></script>
+
         <!-- other JavaScript files -->
         <script src="dist/js/app.js"></script>
         <script src="js/contact-page.js"></script>

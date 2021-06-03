@@ -58,12 +58,14 @@
 .contact-details-title {
     background-color: v.$mainGrey;
     height: 87px;
+    margin-top: 5px; //allows a gap between the contact form submission message and the title.
     margin-bottom: 40px;
     width: 100%;
     @media (min-width: v.$break-med) { 
         background-color: transparent;
         padding-top: 25px;
         margin-bottom: 15px;
+        margin-top: 0px;
     }
     h1 {
         color: v.$white;
