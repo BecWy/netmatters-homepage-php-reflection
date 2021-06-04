@@ -13,9 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
 itSupportDownLink.addEventListener('click', ()=> {
     if (itSupportDown.style.display == "block") {
         itSupportDown.style.display = "none";
+        itSupportDownLink.style.textDecoration = "none";
         console.log("hide");
     } else if(itSupportDown.style.display == "none") {
         itSupportDown.style.display = "block";
         console.log("display");
+        itSupportDownLink.style.textDecoration = "underline";
     } 
 })

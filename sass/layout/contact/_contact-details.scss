@@ -28,6 +28,10 @@
             width: v.$width-lg-v2;
         }
     }
+    a {
+        color: v.$mainGrey;
+        font-weight: v.$bold;
+    }
 }
 
 .contact-container {
@@ -41,6 +45,7 @@
         flex-direction: row-reverse;
         width: v.$width-lg-v2;
         margin: 0 auto;
+        align-items: flex-start;
     }
 }
 
@@ -106,7 +111,8 @@
 }
 
 .contact-details .br {
-    margin-bottom: 40px;
+    margin-bottom: 38px;
+    margin-top: -10px;
 }
 
 #it-support-down-icon {

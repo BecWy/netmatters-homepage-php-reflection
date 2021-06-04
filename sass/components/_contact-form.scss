@@ -57,14 +57,16 @@ form {
         margin-top: 0;
         align-items: flex-start;
         justify-content: flex-start;
-        max-width: none;
         padding: 0;
     }
     div {
         @media (min-width: v.$break-med) {
             display: inline;
+            width: 445px;
+            max-width: none;
+        }
+        @media (min-width: v.$break-lg) {
             width: 50%;
-            max-width: 50%;
         }
     }
 }
@@ -73,10 +75,12 @@ form {
     width: 100%;
     max-width: 720px;
     padding: 5px 15px; //padding is INSIDE the text field, between the text and the border.
+    margin-top: 5px;
     margin-bottom: 25px;
     height: 47px;
     font-size: 14px;
     border: 1px solid #ccc;
+    border-radius: v.$round-corner;
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
     &:focus {
         outline: 0;
@@ -84,10 +88,9 @@ form {
         box-shadow: rgba(91, 192, 222, .6) 0px 0px 8px 0px;
     }
     @media (min-width: v.$break-med) { 
-        width: 370px;
-        max-width: 370px;
+        width: 445px;
+        max-width: 445px;
         display: inline;
-        margin-right: 30px;
     }
 
     @media (min-width: v.$break-lg) { 
@@ -95,32 +98,29 @@ form {
         max-width: 370px;
         display: inline;
         margin-right: 30px;
+    }
+}
+
+#contact-fieldset #name-container,
+#contact-fieldset #phone-container {
+    @media (min-width: v.$break-med) { 
+        margin-right: 36px;
+    }
+    @media (min-width: v.$break-lg) { 
+        margin-right: 0px;
     }
 }
 
 .contact-label {
     display: inline;
     color: v.$mainGrey;
-    margin-bottom: -12px;
+    margin-bottom: -10px;
     font-weight: v.$bold;
     .required {
         color: #d24d57;
     }
 }
 
-#contact-fieldset #form-checkbox-div {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 100%;
-    @media (min-width: v.$break-lg) { 
-        width: 770px;
-    }
-}
-
-#form-checkbox-div .contact-label {
-    line-height: 32px;
-}
 
 #message {
     height: 100px;
@@ -129,13 +129,11 @@ form {
         max-width: 1000px;
         width: 100%;
         margin-right: 0px;
-        padding: 0px;
     }
     @media (min-width: v.$break-lg) { 
         width: 770px;
         max-width: 770px;
         margin-right: 0px;
-        padding: 0px;
     }
 }
 
@@ -175,14 +173,8 @@ form {
     }
 }
 
-#form-checkbox {
-    height: 30px;
-    width: 30px;
-    margin: auto 0;
-    margin-right: 20px;  
-}
 
-#privacy {
+#privacy { //check what this does
     font-weight: v.$bold;
     a {
         color: v.$mainGrey;
@@ -216,4 +208,131 @@ form {
         background-color: v.$web-color1;
         text-align: center;
     }
+}
+
+
+/////////////////////////
+//checkbox
+
+#checkbox-label {
+    margin-left: 50px;
+}
+
+#contact-fieldset #form-checkbox-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    @media (min-width: v.$break-lg) { 
+        width: 770px;
+    }
+}
+
+#form-checkbox-div .contact-label {
+    line-height: 32px;
+}
+
+/* Hide the browser's default checkbox */
+#form-checkbox {
+    position: absolute;
+    top: 8px; //aligns the top of the checkbox with the top of the p
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 32px; //needs to be the same as checkmark
+    width: 32px; //needs to be the same as checkmark
+    //border: 3px solid transparent;
+  }
+
+/* Create a custom checkbox */
+//this is positioned directly over the real checkbox.
+.checkmark {
+    position: absolute;
+    top: 8px; //aligns the top of the checkbox with the top of the p
+    left: 0;
+    height: 32px; //needs to be the same as checkbox
+    width: 32px; //needs to be the same as checkbox
+    background-color: transparent;
+    border: 3px solid v.$mainGrey;
+    border-radius: v.$round-corner;
+    pointer-events: none;
+}
+
+/* On mouse-over */
+#contact-fieldset #form-checkbox-div:hover > *  {
+    cursor: pointer;
+  }
+
+/* When the checkbox is checked, add a background */
+ #form-checkbox:checked ~ .checkmark {  
+    background-color: v.$mainGrey;
+  }
+
+/* Create and style the checkmark/indicator (the tick) (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid v.$white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Show the checkmark (the tick) when checked */
+#form-checkbox:checked ~ .checkmark:after {
+    display: block;
+}
+
+//////////////////////////////////////////////
+// Error Messages
+
+#contact-fieldset .error-messages {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    @media (min-width: v.$break-sm) { 
+        width: 100%;
+        //width: 720px;
+    }
+    @media (min-width: v.$break-lg) { 
+        //width: 100%;
+        width: 770px;
+        margin-left: 0;
+    }
+}
+
+
+#contact-fieldset .error-message {
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid v.$error-border;
+    border-radius: v.$round-corner;
+    margin-bottom: 20px;
+    color: v.$error-text;
+    background-color: v.$error-background;
+    display: block;
+    p {
+        padding: 15px;
+        margin: 0;
+        display: block;
+        width: 100%;
+    }
+    // @media (min-width: v.$break-sm) { 
+    //     width: 100%;
+    //     //width: v.$width-sm;
+    //     display: block;
+    // }
+    // @media (min-width: v.$break-med) { 
+    //     width: v.$width-med-v2;
+    // }
+    // @media (min-width: v.$break-lg) { 
+    //     width: v.$width-lg-v2;
+    // }
 }

@@ -26,8 +26,8 @@ $pageTitle = "Contact Us | Netmatters";
             <main>
                 <div class="breadcrumbs">
                     <p>
-                        <a href="./index.php">Home </a> 
-                        / How Can We Help You?
+                        <a href="./index.php">Home</a> 
+                        &nbsp /&nbsp &nbsp How Can We Help You?
                     </p>
                 </div>
 
@@ -82,6 +82,7 @@ $pageTitle = "Contact Us | Netmatters";
                     <div class="contact-details-title">
                         <h1>How Can We Help You?</h1>
                     </div>
+
                     <div class="contact-inner-container">
                         <div class="contact-details">
                             <p class="br"><strong>Call us on:</strong></p>
@@ -93,7 +94,7 @@ $pageTitle = "Contact Us | Netmatters";
                             <p class="br"><a href="sales@netmatters.com">sales@netmatters.com</a></p>
                             <p class="br"><strong>Business Hours:</strong></p>
                             <p class="br"><strong>Monday - Friday 07:00 - 18:00</strong></p>
-                            <a id="it-support-down-link"><p><strong>Out of Hours IT Support </strong><i class="fa fa-chevron-down" id="it-support-down-icon"></i></p></a>
+                            <a id="it-support-down-link"><p class="br"><strong>Out of Hours IT Support </strong><i class="fa fa-chevron-down" id="it-support-down-icon"></i></p></a>
                             <div class="it-support-down" id="it-support-down">
                                 <p>Netmatters IT are offering an Out of Hours service for Emergency and Critical tasks.</p>
                                 <p><strong>Monday - Friday 18:00 - 22:00</strong></p>
@@ -107,8 +108,18 @@ $pageTitle = "Contact Us | Netmatters";
                             <form action="contact.php" method="post">
                                 <fieldset id="contact-fieldset">
                                     <!-- <legend><span class="number">1</span>Your details</legend> -->
+                                    <div class="error-messages">
+                                        <div class="error-message error-message-phone">
+                                            <!-- use php to echo the message? or add message with JS? -->
+                                            <p>Telephone number is invalid</p>
+                                        </div> <!-- end error-message-phone -->
+                                        <div class="error-message error-message-message">
+                                            <!-- use php to echo the message? or add message with JS? -->
+                                            <p>The message must be at least 5 characters.</p>
+                                        </div> <!-- end error-message-message -->
+                                    </div> <!-- end error-messages -->
                                     
-                                    <div>
+                                    <div id="name-container">
                                         <label for="name" class="contact-label">Your Name <span class="required">*</span></label><br>
                                         <input type="text" id="name" name="user_name" class="contact-field" required="required"><br>
                                     </div>
@@ -118,7 +129,7 @@ $pageTitle = "Contact Us | Netmatters";
                                         <input type="email" id="email" name="user_email" class="contact-field" required="required"><br>
                                     </div>
 
-                                    <div>
+                                    <div id="phone-container">
                                         <label for="phone" class="contact-label">Your Telephone Number <span class="required">*</span></label><br>
                                         <input type="tel" id="phone" name="user_phone" class="contact-field" required="required"><br>
                                     </div>
@@ -133,6 +144,7 @@ $pageTitle = "Contact Us | Netmatters";
                                     
                                     <div id="form-checkbox-div"> <!--change these names/classes to marketing. I've removed required already -->
                                         <input type="checkbox" id="form-checkbox" value="NA" name="marketing_yes">
+                                        <span class="checkmark"></span>
                                         <label for="form-checkbox" id="checkbox-label" class="contact-label">Please tick this box if you wish to receive marketing information from us. Please see our <span id="privacy"><a>Privacy Policy</a></span> for more information on how we use your data</label><br>
                                     </div>
 
@@ -152,7 +164,7 @@ $pageTitle = "Contact Us | Netmatters";
                     <div class="offices">
                         <div class="office-wymondham">
                             <div class="wymondham-address">
-                                <i class="fas fa-home home-icon"></i>
+                                <i class="fas fa-home home-icon" style="line-height:58px;"></i>
                                 <h3>Netmatters Office: Wymondham</h3>
                                 <p class="first-p">Netmatters</p>
                                 <p>11 Penfold Drive</p>
@@ -167,7 +179,7 @@ $pageTitle = "Contact Us | Netmatters";
                         </div> <!-- end office-wymondham -->
                         <div class="office-gorleston">
                             <div class="gorleston-address">
-                                <i class="fas fa-home home-icon"></i>
+                                <i class="fas fa-home home-icon" style="line-height:58px;"></i>
                                 <h3>Netmatters Office: Gorleston, Great Yarmouth</h3>
                                 <p class="first-p">Netmatters - Great Yarmouth</p>
                                 <p>Suite F23 Beacon Innovation Centre, Beacon Park</p>
@@ -203,7 +215,7 @@ $pageTitle = "Contact Us | Netmatters";
 
         <!-- other JavaScript files -->
         <script src="dist/js/app.js"></script>
-        <script src="js/contact-page.js"></script>
+        <script src="dist/js/contact-page.js"></script>
     </body>
 </html>
 

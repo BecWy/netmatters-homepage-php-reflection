@@ -2453,6 +2453,10 @@ body {
     width: 1152px;
   }
 }
+.breadcrumbs a {
+  color: #333645;
+  font-weight: 600;
+}
 
 .contact-container {
   box-shadow: inset 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
@@ -2467,6 +2471,7 @@ body {
     flex-direction: row-reverse;
     width: 1152px;
     margin: 0 auto;
+    align-items: flex-start;
   }
 }
 
@@ -2546,7 +2551,8 @@ body {
 }
 
 .contact-details .br {
-  margin-bottom: 40px;
+  margin-bottom: 38px;
+  margin-top: -10px;
 }
 
 #it-support-down-icon {
@@ -3511,15 +3517,19 @@ form {
     margin-top: 0;
     align-items: flex-start;
     justify-content: flex-start;
-    max-width: none;
     padding: 0;
   }
 }
 @media (min-width: 993px) {
   #contact-fieldset div {
     display: inline;
+    width: 445px;
+    max-width: none;
+  }
+}
+@media (min-width: 1260px) {
+  #contact-fieldset div {
     width: 50%;
-    max-width: 50%;
   }
 }
 
@@ -3527,10 +3537,12 @@ form {
   width: 100%;
   max-width: 720px;
   padding: 5px 15px;
+  margin-top: 5px;
   margin-bottom: 25px;
   height: 47px;
   font-size: 14px;
   border: 1px solid #ccc;
+  border-radius: 3px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
 }
 .contact-field:focus {
@@ -3540,10 +3552,9 @@ form {
 }
 @media (min-width: 993px) {
   .contact-field {
-    width: 370px;
-    max-width: 370px;
+    width: 445px;
+    max-width: 445px;
     display: inline;
-    margin-right: 30px;
   }
 }
 @media (min-width: 1260px) {
@@ -3555,30 +3566,27 @@ form {
   }
 }
 
+@media (min-width: 993px) {
+  #contact-fieldset #name-container,
+#contact-fieldset #phone-container {
+    margin-right: 36px;
+  }
+}
+@media (min-width: 1260px) {
+  #contact-fieldset #name-container,
+#contact-fieldset #phone-container {
+    margin-right: 0px;
+  }
+}
+
 .contact-label {
   display: inline;
   color: #333645;
-  margin-bottom: -12px;
+  margin-bottom: -10px;
   font-weight: 600;
 }
 .contact-label .required {
   color: #d24d57;
-}
-
-#contact-fieldset #form-checkbox-div {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 100%;
-}
-@media (min-width: 1260px) {
-  #contact-fieldset #form-checkbox-div {
-    width: 770px;
-  }
-}
-
-#form-checkbox-div .contact-label {
-  line-height: 32px;
 }
 
 #message {
@@ -3589,7 +3597,6 @@ form {
     max-width: 1000px;
     width: 100%;
     margin-right: 0px;
-    padding: 0px;
   }
 }
 @media (min-width: 1260px) {
@@ -3597,7 +3604,6 @@ form {
     width: 770px;
     max-width: 770px;
     margin-right: 0px;
-    padding: 0px;
   }
 }
 
@@ -3643,13 +3649,6 @@ form {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.13);
 }
 
-#form-checkbox {
-  height: 30px;
-  width: 30px;
-  margin: auto 0;
-  margin-right: 20px;
-}
-
 #privacy {
   font-weight: 600;
 }
@@ -3692,6 +3691,114 @@ form {
     background-color: #926fb1;
     text-align: center;
   }
+}
+
+#checkbox-label {
+  margin-left: 50px;
+}
+
+#contact-fieldset #form-checkbox-div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+@media (min-width: 1260px) {
+  #contact-fieldset #form-checkbox-div {
+    width: 770px;
+  }
+}
+
+#form-checkbox-div .contact-label {
+  line-height: 32px;
+}
+
+/* Hide the browser's default checkbox */
+#form-checkbox {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 32px;
+  width: 32px;
+  background-color: transparent;
+  border: 3px solid #333645;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+/* On mouse-over */
+#contact-fieldset #form-checkbox-div:hover > * {
+  cursor: pointer;
+}
+
+/* When the checkbox is checked, add a background */
+#form-checkbox:checked ~ .checkmark {
+  background-color: #333645;
+}
+
+/* Create and style the checkmark/indicator (the tick) (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* Show the checkmark (the tick) when checked */
+#form-checkbox:checked ~ .checkmark:after {
+  display: block;
+}
+
+#contact-fieldset .error-messages {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+@media (min-width: 768px) {
+  #contact-fieldset .error-messages {
+    width: 100%;
+  }
+}
+@media (min-width: 1260px) {
+  #contact-fieldset .error-messages {
+    width: 770px;
+    margin-left: 0;
+  }
+}
+
+#contact-fieldset .error-message {
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #ebccd1;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  color: #a94442;
+  background-color: #f2dede;
+  display: block;
+}
+#contact-fieldset .error-message p {
+  padding: 15px;
+  margin: 0;
+  display: block;
+  width: 100%;
 }
 
 @media (min-width: 993px) and (max-width: 1260px) {
