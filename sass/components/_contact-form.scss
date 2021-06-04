@@ -14,6 +14,9 @@
         color: v.$mainGrey;
         margin-top: 30px;
     }
+    @media (min-width: v.$break-lg) { 
+        width: 800px;
+    }
 }
 
 form {
@@ -33,17 +36,42 @@ form {
 
 #contact-fieldset {
     width: 100%;
-    max-width: 600px;
+    max-width: 720px;
     margin: 30px 0;
     border: none;
     @media (min-width: v.$break-sm) { 
         padding-left: 0;
     }
+    @media (min-width: v.$break-med) { 
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: none;
+        padding: 0;
+    }
+    @media (min-width: v.$break-lg) { 
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: none;
+        padding: 0;
+    }
+    div {
+        @media (min-width: v.$break-med) {
+            display: inline;
+            width: 50%;
+            max-width: 50%;
+        }
+    }
 }
 
 .contact-field {
     width: 100%;
-    max-width: 600px;
+    max-width: 720px;
     padding: 5px 15px; //padding is INSIDE the text field, between the text and the border.
     margin-bottom: 25px;
     height: 47px;
@@ -55,15 +83,38 @@ form {
         border: .5px solid #5bc0de;
         box-shadow: rgba(91, 192, 222, .6) 0px 0px 8px 0px;
     }
+    @media (min-width: v.$break-med) { 
+        width: 370px;
+        max-width: 370px;
+        display: inline;
+        margin-right: 30px;
+    }
+
+    @media (min-width: v.$break-lg) { 
+        width: 370px;
+        max-width: 370px;
+        display: inline;
+        margin-right: 30px;
+    }
 }
 
 .contact-label {
-    display: block;
+    display: inline;
     color: v.$mainGrey;
     margin-bottom: -12px;
     font-weight: v.$bold;
     .required {
         color: #d24d57;
+    }
+}
+
+#contact-fieldset #form-checkbox-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    @media (min-width: v.$break-lg) { 
+        width: 770px;
     }
 }
 
@@ -73,6 +124,19 @@ form {
 
 #message {
     height: 100px;
+    @media (min-width: v.$break-med) { 
+        //width: 770px;
+        max-width: 1000px;
+        width: 100%;
+        margin-right: 0px;
+        padding: 0px;
+    }
+    @media (min-width: v.$break-lg) { 
+        width: 770px;
+        max-width: 770px;
+        margin-right: 0px;
+        padding: 0px;
+    }
 }
 
 #button-div {
@@ -109,11 +173,6 @@ form {
             box-shadow: inset 0 3px 5px rgb(0 0 0 / 13%);
         }
     }
-}
-
-#form-checkbox-div {
-    display: flex;
-    flex-direction: row;
 }
 
 #form-checkbox {

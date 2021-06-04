@@ -1,4 +1,5 @@
 @use "utilities/variables" as v; //variables
+@use "utilities/mixins" as m; //mixins
 
 .breadcrumbs {
     //padding: 14px 0 13px;
@@ -38,6 +39,8 @@
     flex-direction: column;
     @media (min-width: v.$break-lg) { 
         flex-direction: row-reverse;
+        width: v.$width-lg-v2;
+        margin: 0 auto;
     }
 }
 
@@ -51,7 +54,8 @@
         width: v.$width-med-v2;
     }
     @media (min-width: v.$break-lg) { 
-        width: 400px;
+        width: 370px;
+        padding-right: 15px;
     }
 }
 
@@ -137,11 +141,10 @@
 
 .office-wymondham,
 .office-gorleston {
+    border-radius: v.$round-corner;
     background-color: v.$white;
     text-align: center;
     box-shadow: 0 3px 35px rgb(0 0 0 / 10%);
-    border: 1px solid v.$second-grey;
-    border-radius: v.$round-corner;
     margin: 0 auto;
     margin-bottom: 30px;
     width: 100%;
@@ -159,6 +162,39 @@
 .wymondham-address,
 .gorleston-address {
     padding: 30px;
+    border: 1px solid v.$second-grey;
+    border-radius: v.$round-corner;
+    margin-bottom: -1px;
+    @media (min-width: v.$break-sm) { 
+        height: 350px;
+    }
+    @media (min-width: v.$break-med) { 
+        height: 330px;
+    }
+    @media (min-width: v.$break-lg) { 
+        height: 310px;
+    }
+    &:hover {
+        background-color: v.$web-color1;
+        color: v.$white;
+        & h3::after {
+            border-color: v.$white;
+        }
+    }
+    h3 {
+        @include m.pseudo-underline;
+        position: relative;
+        font-weight: v.$regular;
+        font-size: 18px;
+    }
+    p {
+        margin-bottom: 0;
+        margin-top: 5px;
+        font-size: 13px;
+    }
+    .first-p {
+        margin-top: 30px;
+    }
 }
 
 .home-icon {

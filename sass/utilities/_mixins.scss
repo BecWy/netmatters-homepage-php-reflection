@@ -17,8 +17,18 @@
      } 
  }
  
-
- 
+//pseudo element underline ::AFTER. make sure to set parent element to relative
+@mixin pseudo-underline {
+    &::after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        left: calc(50% - 15px);
+        bottom: -16px;
+        border-bottom: 3.5px solid v.$mainGrey;
+        @content;
+    }
+}
  
  // // ICON & BUTTON MIXIN HOVER need to think about if this is useful. Currently a loop.
  // @mixin themes-fg-hov($map) {

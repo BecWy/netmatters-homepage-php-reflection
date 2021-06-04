@@ -107,17 +107,26 @@ $pageTitle = "Contact Us | Netmatters";
                             <form action="contact.php" method="post">
                                 <fieldset id="contact-fieldset">
                                     <!-- <legend><span class="number">1</span>Your details</legend> -->
-                                    <label for="name" class="contact-label">Your Name <span class="required">*</span></label><br>
-                                    <input type="text" id="name" name="user_name" class="contact-field" required="required"><br>
                                     
-                                    <label for="email" class="contact-label">Your Email <span class="required">*</span></label><br>
-                                    <input type="email" id="email" name="user_email" class="contact-field" required="required"><br>
-                                    
-                                    <label for="phone" class="contact-label">Your Telephone Number <span class="required">*</span></label><br>
-                                    <input type="tel" id="phone" name="user_phone" class="contact-field" required="required"><br>
+                                    <div>
+                                        <label for="name" class="contact-label">Your Name <span class="required">*</span></label><br>
+                                        <input type="text" id="name" name="user_name" class="contact-field" required="required"><br>
+                                    </div>
 
-                                    <label for="subject" class="contact-label">Subject <span class="required">*</span></label><br>
-                                    <input type="text" id="subject" name="user_subject" class="contact-field" required="required"><br>
+                                    <div>
+                                        <label for="email" class="contact-label">Your Email <span class="required">*</span></label><br>
+                                        <input type="email" id="email" name="user_email" class="contact-field" required="required"><br>
+                                    </div>
+
+                                    <div>
+                                        <label for="phone" class="contact-label">Your Telephone Number <span class="required">*</span></label><br>
+                                        <input type="tel" id="phone" name="user_phone" class="contact-field" required="required"><br>
+                                    </div>
+
+                                    <div>
+                                        <label for="subject" class="contact-label">Subject <span class="required">*</span></label><br>
+                                        <input type="text" id="subject" name="user_subject" class="contact-field" required="required"><br>
+                                    </div>
 
                                     <label for="message" class="contact-label">Message <span class="required">*</span></label><br>
                                     <textarea id="message" name="user_message" class="contact-field" required="required"></textarea><br>
@@ -145,7 +154,7 @@ $pageTitle = "Contact Us | Netmatters";
                             <div class="wymondham-address">
                                 <i class="fas fa-home home-icon"></i>
                                 <h3>Netmatters Office: Wymondham</h3>
-                                <p>Netmatters</p>
+                                <p class="first-p">Netmatters</p>
                                 <p>11 Penfold Drive</p>
                                 <p>Wymondham</p>
                                 <p>Norfolk</p>
@@ -160,7 +169,7 @@ $pageTitle = "Contact Us | Netmatters";
                             <div class="gorleston-address">
                                 <i class="fas fa-home home-icon"></i>
                                 <h3>Netmatters Office: Gorleston, Great Yarmouth</h3>
-                                <p>Netmatters - Great Yarmouth</p>
+                                <p class="first-p">Netmatters - Great Yarmouth</p>
                                 <p>Suite F23 Beacon Innovation Centre, Beacon Park</p>
                                 <p>Gorleston, Great Yarmouth</p>
                                 <p>Norfolk</p>

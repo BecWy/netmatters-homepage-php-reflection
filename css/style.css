@@ -2465,6 +2465,8 @@ body {
 @media (min-width: 1260px) {
   .contact-inner-container {
     flex-direction: row-reverse;
+    width: 1152px;
+    margin: 0 auto;
   }
 }
 
@@ -2484,7 +2486,8 @@ body {
 }
 @media (min-width: 1260px) {
   .contact-details {
-    width: 400px;
+    width: 370px;
+    padding-right: 15px;
   }
 }
 
@@ -2574,11 +2577,10 @@ body {
 
 .office-wymondham,
 .office-gorleston {
+  border-radius: 3px;
   background-color: #fff;
   text-align: center;
   box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ccc;
-  border-radius: 3px;
   margin: 0 auto;
   margin-bottom: 30px;
   width: 100%;
@@ -2605,6 +2607,61 @@ body {
 .wymondham-address,
 .gorleston-address {
   padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: -1px;
+}
+@media (min-width: 768px) {
+  .wymondham-address,
+.gorleston-address {
+    height: 350px;
+  }
+}
+@media (min-width: 993px) {
+  .wymondham-address,
+.gorleston-address {
+    height: 330px;
+  }
+}
+@media (min-width: 1260px) {
+  .wymondham-address,
+.gorleston-address {
+    height: 310px;
+  }
+}
+.wymondham-address:hover,
+.gorleston-address:hover {
+  background-color: #926fb1;
+  color: #fff;
+}
+.wymondham-address:hover h3::after,
+.gorleston-address:hover h3::after {
+  border-color: #fff;
+}
+.wymondham-address h3,
+.gorleston-address h3 {
+  position: relative;
+  font-weight: 400;
+  font-size: 18px;
+}
+.wymondham-address h3::after,
+.gorleston-address h3::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  left: calc(50% - 15px);
+  bottom: -16px;
+  border-bottom: 3.5px solid #333645;
+}
+.wymondham-address p,
+.gorleston-address p {
+  margin-bottom: 0;
+  margin-top: 5px;
+  font-size: 13px;
+}
+.wymondham-address .first-p,
+.gorleston-address .first-p {
+  margin-top: 30px;
 }
 
 .home-icon {
@@ -3397,6 +3454,11 @@ body {
   color: #333645;
   margin-top: 30px;
 }
+@media (min-width: 1260px) {
+  .contact-form-container {
+    width: 800px;
+  }
+}
 
 form {
   margin: 0 auto;
@@ -3421,7 +3483,7 @@ form {
 
 #contact-fieldset {
   width: 100%;
-  max-width: 600px;
+  max-width: 720px;
   margin: 30px 0;
   border: none;
 }
@@ -3430,10 +3492,39 @@ form {
     padding-left: 0;
   }
 }
+@media (min-width: 993px) {
+  #contact-fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: none;
+    padding: 0;
+  }
+}
+@media (min-width: 1260px) {
+  #contact-fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: none;
+    padding: 0;
+  }
+}
+@media (min-width: 993px) {
+  #contact-fieldset div {
+    display: inline;
+    width: 50%;
+    max-width: 50%;
+  }
+}
 
 .contact-field {
   width: 100%;
-  max-width: 600px;
+  max-width: 720px;
   padding: 5px 15px;
   margin-bottom: 25px;
   height: 47px;
@@ -3446,9 +3537,25 @@ form {
   border: 0.5px solid #5bc0de;
   box-shadow: rgba(91, 192, 222, 0.6) 0px 0px 8px 0px;
 }
+@media (min-width: 993px) {
+  .contact-field {
+    width: 370px;
+    max-width: 370px;
+    display: inline;
+    margin-right: 30px;
+  }
+}
+@media (min-width: 1260px) {
+  .contact-field {
+    width: 370px;
+    max-width: 370px;
+    display: inline;
+    margin-right: 30px;
+  }
+}
 
 .contact-label {
-  display: block;
+  display: inline;
   color: #333645;
   margin-bottom: -12px;
   font-weight: 600;
@@ -3457,12 +3564,40 @@ form {
   color: #d24d57;
 }
 
+#contact-fieldset #form-checkbox-div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+}
+@media (min-width: 1260px) {
+  #contact-fieldset #form-checkbox-div {
+    width: 770px;
+  }
+}
+
 #form-checkbox-div .contact-label {
   line-height: 32px;
 }
 
 #message {
   height: 100px;
+}
+@media (min-width: 993px) {
+  #message {
+    max-width: 1000px;
+    width: 100%;
+    margin-right: 0px;
+    padding: 0px;
+  }
+}
+@media (min-width: 1260px) {
+  #message {
+    width: 770px;
+    max-width: 770px;
+    margin-right: 0px;
+    padding: 0px;
+  }
 }
 
 #button-div {
@@ -3505,11 +3640,6 @@ form {
 }
 #button-div button:active {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.13);
-}
-
-#form-checkbox-div {
-  display: flex;
-  flex-direction: row;
 }
 
 #form-checkbox {
