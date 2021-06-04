@@ -2566,6 +2566,7 @@ body {
 .offices {
   width: 90%;
   margin: 0 auto;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
 }
@@ -2656,7 +2657,7 @@ body {
 .wymondham-address p,
 .gorleston-address p {
   margin-bottom: 0;
-  margin-top: 5px;
+  margin-top: 8px;
   font-size: 13px;
 }
 .wymondham-address .first-p,
