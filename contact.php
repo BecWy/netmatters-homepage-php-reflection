@@ -40,6 +40,8 @@ $pageTitle = "Contact Us | Netmatters";
                         ?>
 
                         <script> 
+                            const successMessage = document.querySelector(".success-message");
+                            const messageP = document.querySelector(".message-p");
                             setTimeout( () => { 
                                 messageP.style.opacity = "0";
                             }, 6700);
@@ -58,22 +60,25 @@ $pageTitle = "Contact Us | Netmatters";
                         echo '<div class="fail-message">';
                         echo '<p class="message-p">Enquiry submission unsuccessful. Please try again.</p>';
                         echo '</div>';
-                    }
+                    
                     ?>
                     <script> 
+                        const failMessage = document.querySelector(".fail-message");
+                        const messageP = document.querySelector(".message-p");
                         setTimeout( () => { 
-                            failMessage.style.height = "0px";
-                            //need to fade the text opacity at the same time as the height
-                            //at the moment fading the whole message
-                            messageP.style.opacity = "0";
-                            failMessage.style.opacity = "0";
-                        }, 7000);
-                        setTimeout( () => { 
-                            failMessage.style.display = "none";
-                        }, 8500);
+                                messageP.style.opacity = "0";
+                            }, 6700);
+                            setTimeout( () => { 
+                                failMessage.style.height = "0px";
+                                failMessage.style.opacity = "0";
+                            }, 7000);
+                            setTimeout( () => { 
+                                failMessage.style.display = "none";
+                            }, 8500);
                     </script>
 
-                <?php
+                    <?php
+                    }
                 }
                 ?>
 
