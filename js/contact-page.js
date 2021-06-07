@@ -4,15 +4,17 @@ const itSupportDown = document.querySelector("#it-support-down");
 const errorMessages = document.querySelector(".error-messages");
 const errorMessage = document.querySelectorAll(".error-message");
 const errorMessageClose = document.querySelectorAll(".error-message-close");
+const errorMessagePhone = document.querySelector(".error-message-phone");
+const errorMessageMessage = document.querySelector(".error-message-message");
 
 
 //Page Loaded
 document.addEventListener('DOMContentLoaded', () => {
     itSupportDown.style.display = "none";
     //REACTIVATE THE BELOW ONCE ALL VALIDATION ADDED AND TESTED
-    // for (let i = 0; i < errorMessage.length; i++) {
-    //     errorMessage[i].style.display = "none";
-    // }
+    for (let i = 0; i < errorMessage.length; i++) {
+        errorMessage[i].style.display = "none";
+    }
 })
 
 
@@ -45,15 +47,14 @@ const subjectInput = document.querySelector("#subject");
 const messageInput = document.querySelector("#message");
 
 
+//Form input event listeners (need to refactor these)
 nameInput.addEventListener("invalid", function( event ) {
     event.preventDefault();
 });
 
 emailInput.addEventListener("invalid", function( event ) {
     event.preventDefault();
-    //emailInput.classList.add("invalid");
 });
-
 
 phoneInput.addEventListener("invalid", function( event ) {
     event.preventDefault();
@@ -69,7 +70,32 @@ messageInput.addEventListener("invalid", function( event ) {
 
 //when submit button is clicked
 const submitButton = document.querySelector("#submit-button");
-submitButton.addEventListener( "click", (e)=> {
+submitButton.addEventListener( "click", (event)=> {
+    //prevent the form from submitting if the message is not valid
+    if(messageInput.value !== "") {
+        if(messageInput.value.length < 5) {
+            event.preventDefault(); 
+            errorMessageMessage.style.display = "flex";
+        } else {
+            errorMessageMessage.style.display = "none ";
+        }
+    }
+
+    //prevent the form from submitting if the phone number is not valid
+    let isPhoneValid = true; //assume true intitially when clicked, then if the phone fails validation this changes to false.
+    if(phoneInput.value !== "") {
+        const phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
+        if(!phoneUtil.isValidNumberForRegion(phoneUtil.parse(phoneInput.value, 'GB'), 'GB')) {
+            event.preventDefault(); 
+            errorMessagePhone.style.display = "flex";
+            isPhoneValid = false;
+        } else {
+            errorMessagePhone.style.display = "none";
+            isPhoneValid = true;
+        }
+    }
+
+
     //add a red border to all empty/ invalid fields
     if(nameInput.value === "") {
         nameInput.style.border = "1px solid red";
@@ -77,12 +103,12 @@ submitButton.addEventListener( "click", (e)=> {
         nameInput.style.border = "1px solid #ccc";
     }
     if(emailInput.value === "" || emailInput.checkValidity() === false) {
-        console.log("the email is not valid");
+        //console.log("the email is not valid");
         emailInput.style.border = "1px solid red";
     } else {
         emailInput.style.border = "1px solid #ccc";
     }
-    if(phoneInput.value === "") {
+    if(phoneInput.value === "" || isPhoneValid === false) {
         phoneInput.style.border = "1px solid red";
     } else {
         phoneInput.style.border = "1px solid #ccc";
@@ -92,7 +118,7 @@ submitButton.addEventListener( "click", (e)=> {
     } else {
         subjectInput.style.border = "1px solid #ccc";
     }
-    if(messageInput.value === "") {
+    if(messageInput.value === "" || messageInput.value.length < 5) {
         messageInput.style.border = "1px solid red";
     } else {
         messageInput.style.border = "1px solid #ccc";
@@ -101,53 +127,13 @@ submitButton.addEventListener( "click", (e)=> {
     //add focus to the first empty/invalid field
     if(nameInput.value === "") {
         nameInput.focus(); 
-    } else if(emailInput.value === "" || emailInput.checkValidity() === false) { //emailInput.classList.contains("invalid")
+    } else if(emailInput.value === "" || emailInput.checkValidity() === false) { 
         emailInput.focus(); 
-    } else if(phoneInput.value === "") {
+    } else if(phoneInput.value === "" || isPhoneValid === false) {
         phoneInput.focus(); 
     } else if(subjectInput.value === "") {
         subjectInput.focus(); 
-    } else if(messageInput.value === "") {
+    } else if(messageInput.value === "" || messageInput.value.length < 5) {
         messageInput.focus(); 
     }
 })
-
-
-// document.addEventListener("invalid", ( () => {
-//     return function (e) {
-//         e.preventDefault();
-//         console.log("prevented");
-//         let name = document.querySelector("#name");
-
-//       if(name === "") {
-//         console.log("focus!!");
-//         name.focus(); 
-//         name.style.outline = "red";
-//         name.style.border = "1px solid red";
-//       }
-//     };
-//   })(), true);
-
-// document.addEventListener("invalid", (e) => {
-//     e.preventDefault();
-//     console.log("prevented");
-//     let name = document.querySelector("#name");
-
-//     if(name === "") {
-//         console.log("focus!!");
-//         name.focus(); 
-//         name.style.outline = "red";
-//         name.style.border = "1px solid red";
-//     }
-// })
-
-
-
-
-/* <script>
-document.getElementById("myInput").addEventListener("invalid", myFunction);
-
-function myFunction() {
-  alert("Must contain 6 or more characters");
-}
-</script> */

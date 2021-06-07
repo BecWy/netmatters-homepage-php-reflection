@@ -133,7 +133,7 @@ $pageTitle = "Contact Us | Netmatters";
 
                                     <div>
                                         <label for="email" class="contact-label">Your Email <span class="required">*</span></label><br>
-                                        <input type="email" id="email" name="user_email" class="contact-field" required="required"><br>
+                                        <input type="email" id="email" name="user_email" class="contact-field" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
                                     </div>
 
                                     <div id="phone-container">

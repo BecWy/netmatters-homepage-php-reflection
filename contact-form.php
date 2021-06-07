@@ -43,6 +43,10 @@ if($_POST) {
             if($isValid === true) {
                 // Produces format "044 668 18 00"
                 $phone = $phoneUtil->format($sanitizedPhoneProto, \libphonenumber\PhoneNumberFormat::INTERNATIONAL);
+            } else if(strlen($sanitizedPhone) > 5 && strlen($sanitizedPhone) < 20) {
+                //number may still be valid, but an international number. Just need to make sure it's not malicious.
+                //$justNums = preg_replace("/[^0-9]/", '', $string);
+                $phone = preg_replace("^[0-9+\(\)#\.\s\/ext-]+$", '', $sanitizedPhone);
             }
         } catch (\libphonenumber\NumberParseException $e) {
             var_dump($e);
