@@ -112,10 +112,12 @@ $pageTitle = "Contact Us | Netmatters";
                                         <div class="error-message error-message-phone">
                                             <!-- use php to echo the message? or add message with JS? -->
                                             <p>Telephone number is invalid</p>
+                                            <i class="fas fa-times error-message-close"></i>
                                         </div> <!-- end error-message-phone -->
                                         <div class="error-message error-message-message">
                                             <!-- use php to echo the message? or add message with JS? -->
                                             <p>The message must be at least 5 characters.</p>
+                                            <i class="fas fa-times error-message-close"></i>
                                         </div> <!-- end error-message-message -->
                                     </div> <!-- end error-messages -->
                                     

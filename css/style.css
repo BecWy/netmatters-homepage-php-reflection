@@ -3792,13 +3792,26 @@ form {
   margin-bottom: 20px;
   color: #a94442;
   background-color: #f2dede;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
 }
 #contact-fieldset .error-message p {
-  padding: 15px;
   margin: 0;
   display: block;
   width: 100%;
+}
+
+#contact-fieldset .error-message-close {
+  color: #000;
+  opacity: 0.2;
+  font-size: 14px;
+  line-height: 18.4px;
+}
+#contact-fieldset .error-message-close:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 993px) and (max-width: 1260px) {
