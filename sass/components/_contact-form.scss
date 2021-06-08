@@ -190,32 +190,6 @@ form {
 
 
 
-.success-message,
-.fail-message {
-    background-color: v.$software-color1;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    z-index: 2000;
-    transition: all 1.5s ease-out; 
-    p {
-        color: v.$white;
-        transition: all .5s ease-out; 
-        width: v.$width-xs;
-        @media (min-width: v.$break-sm) { 
-            width: v.$width-sm;
-        }
-        @media (min-width: v.$break-med) {
-            width: 100%;
-        }
-    }
-    @media (min-width: v.$break-med) { 
-        background-color: v.$web-color1;
-        text-align: center;
-    }
-}
-
 
 /////////////////////////
 //checkbox
@@ -298,6 +272,36 @@ form {
 
 //////////////////////////////////////////////
 // Error Messages
+
+.success-message,
+.fail-message {
+    background-color: v.$software-color1;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 2000;
+    transition: all 1.5s ease-out; 
+    p {
+        color: v.$white;
+        transition: all .5s ease-out; 
+        width: v.$width-xs;
+        margin-top: 0;
+        margin-bottom: 0;
+        @media (min-width: v.$break-sm) { 
+            width: v.$width-sm;
+        }
+        @media (min-width: v.$break-med) {
+            width: 100%;
+        }
+    }
+    @media (min-width: v.$break-med) { 
+        background-color: v.$web-color1;
+        text-align: center;
+        height: 50px;
+    }
+}
 
 #contact-fieldset .error-messages {
     width: 100%;

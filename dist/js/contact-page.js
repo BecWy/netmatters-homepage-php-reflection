@@ -1321,7 +1321,12 @@ messageInput.addEventListener("invalid", function (event) {
 
 var submitButton = document.querySelector("#submit-button");
 submitButton.addEventListener("click", function (event) {
-  //prevent the form from submitting if the message is not valid
+  //if any of the fields just contain whitespace prevent form submission
+  if (nameInput.value.trim() === "" || subjectInput.value.trim() === "" || messageInput.value.trim() === "") {
+    event.preventDefault();
+  } //prevent the form from submitting if the message is not valid
+
+
   if (messageInput.value !== "") {
     if (messageInput.value.length < 5) {
       event.preventDefault();
@@ -1375,7 +1380,7 @@ submitButton.addEventListener("click", function (event) {
   } //add a red border to all empty/ invalid fields
 
 
-  if (nameInput.value === "") {
+  if (nameInput.value.trim() === "") {
     nameInput.style.border = "1px solid #d64541";
   } else {
     nameInput.style.border = "1px solid #ccc";
@@ -1394,13 +1399,13 @@ submitButton.addEventListener("click", function (event) {
     phoneInput.style.border = "1px solid #ccc";
   }
 
-  if (subjectInput.value === "") {
+  if (subjectInput.value.trim() === "") {
     subjectInput.style.border = "1px solid #d64541";
   } else {
     subjectInput.style.border = "1px solid #ccc";
   }
 
-  if (messageInput.value === "" || messageInput.value.length < 5) {
+  if (messageInput.value.trim() === "" || messageInput.value.length < 5) {
     messageInput.style.border = "1px solid #d64541";
   } else {
     messageInput.style.border = "1px solid #ccc";

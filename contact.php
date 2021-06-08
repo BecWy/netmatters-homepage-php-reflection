@@ -42,14 +42,14 @@ $pageTitle = "Contact Us | Netmatters";
                         <script> 
                             const successMessage = document.querySelector(".success-message");
                             const messageP = document.querySelector(".message-p");
-                            setTimeout( () => { 
+                            setTimeout( function() { 
                                 messageP.style.opacity = "0";
                             }, 6700);
-                            setTimeout( () => { 
+                            setTimeout( function() { 
                                 successMessage.style.height = "0px";
                                 successMessage.style.opacity = "0";
                             }, 7000);
-                            setTimeout( () => { 
+                            setTimeout( function() { 
                                 successMessage.style.display = "none";
                             }, 8500);
                         </script>
@@ -65,14 +65,14 @@ $pageTitle = "Contact Us | Netmatters";
                     <script> 
                         const failMessage = document.querySelector(".fail-message");
                         const messageP = document.querySelector(".message-p");
-                        setTimeout( () => { 
+                        setTimeout( function() { 
                                 messageP.style.opacity = "0";
                             }, 6700);
-                            setTimeout( () => { 
+                            setTimeout( function() { 
                                 failMessage.style.height = "0px";
                                 failMessage.style.opacity = "0";
                             }, 7000);
-                            setTimeout( () => { 
+                            setTimeout( function() { 
                                 failMessage.style.display = "none";
                             }, 8500);
                     </script>
@@ -133,7 +133,7 @@ $pageTitle = "Contact Us | Netmatters";
 
                                     <div>
                                         <label for="email" class="contact-label">Your Email <span class="required">*</span></label><br>
-                                        <input type="email" id="email" name="user_email" class="contact-field" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
+                                        <input type="email" id="email" name="user_email" class="contact-field" required="required" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"><br>
                                     </div>
 
                                     <div id="phone-container">

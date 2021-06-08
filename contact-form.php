@@ -18,6 +18,7 @@ if($_POST) {
     //filter input & to first letter of each word in uppercase
     if(isset($_POST['user_name'])) {
         $name = ucwords(strtolower(filter_var($_POST['user_name'], FILTER_SANITIZE_STRING)));
+        $name = trim($name);
     }
 
     //filter input & to all lower case & has to be a valid email address format
@@ -25,12 +26,13 @@ if($_POST) {
         $sanitizedEmailInput = strtolower(filter_var($_POST['user_email'], FILTER_SANITIZE_EMAIL));
         if(!filter_var($sanitizedEmailInput, FILTER_VALIDATE_EMAIL) === false) {
             $email = $sanitizedEmailInput;
+            $email = trim($email);
         }
     }
 
     //filter input. First checks for a valid British number, but will ultimately accept any number 5-20 digits in length once letters have been removed.
     if(isset($_POST['user_phone'])) {
-        $sanitizedPhone = filter_var($_POST['user_phone'], FILTER_SANITIZE_STRING);
+        $sanitizedPhone = trim(filter_var($_POST['user_phone'], FILTER_SANITIZE_STRING));
         $phoneUtil = \libphonenumber\PhoneNumberUtil::getInstance();
         $editedSanitizedPhone = preg_replace("/[^0-9+ ]/", "", $sanitizedPhone); //the space before the closing ] is important so that any input spaces are retained. The + permits a plus to be used in the database format.
         //var_dump("this is the sanitised number: $sanitizedPhone"); TEST
@@ -62,11 +64,13 @@ if($_POST) {
     //filter input & to first character of first word in uppercase
     if(isset($_POST['user_subject'])) {
         $subject = ucfirst(strtolower(filter_var($_POST['user_subject'], FILTER_SANITIZE_STRING)));
+        $subject = trim($subject);
     }
 
     //filter input & to first character of first word in uppercase & has to be at least 5 characters
     if(isset($_POST['user_message']) && strlen($_POST['user_message']) >= 5) {
         $message = ucfirst(filter_var($_POST['user_message'], FILTER_SANITIZE_STRING));
+        $message = trim($message);
     }
  
     //check if the checkbox is checked, if so the marketingYes value is updated to true

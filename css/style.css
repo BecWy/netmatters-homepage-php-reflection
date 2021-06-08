@@ -3689,42 +3689,6 @@ form {
   text-decoration: underline;
 }
 
-.success-message,
-.fail-message {
-  background-color: #67809f;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  z-index: 2000;
-  transition: all 1.5s ease-out;
-}
-.success-message p,
-.fail-message p {
-  color: #fff;
-  transition: all 0.5s ease-out;
-  width: 95%;
-}
-@media (min-width: 768px) {
-  .success-message p,
-.fail-message p {
-    width: 720px;
-  }
-}
-@media (min-width: 993px) {
-  .success-message p,
-.fail-message p {
-    width: 100%;
-  }
-}
-@media (min-width: 993px) {
-  .success-message,
-.fail-message {
-    background-color: #926fb1;
-    text-align: center;
-  }
-}
-
 #checkbox-label {
   margin-left: 50px;
 }
@@ -3797,6 +3761,46 @@ form {
 /* Show the checkmark (the tick) when checked */
 #form-checkbox:checked ~ .checkmark:after {
   display: block;
+}
+
+.success-message,
+.fail-message {
+  background-color: #67809f;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 2000;
+  transition: all 1.5s ease-out;
+}
+.success-message p,
+.fail-message p {
+  color: #fff;
+  transition: all 0.5s ease-out;
+  width: 95%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .success-message p,
+.fail-message p {
+    width: 720px;
+  }
+}
+@media (min-width: 993px) {
+  .success-message p,
+.fail-message p {
+    width: 100%;
+  }
+}
+@media (min-width: 993px) {
+  .success-message,
+.fail-message {
+    background-color: #926fb1;
+    text-align: center;
+    height: 50px;
+  }
 }
 
 #contact-fieldset .error-messages {
