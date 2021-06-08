@@ -4,8 +4,6 @@
 .contact-form-container {
     margin: 0 auto;
     width: 100%;
-    margin: 0 auto;
-    margin-top: 30px;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -16,6 +14,7 @@
     }
     @media (min-width: v.$break-lg) { 
         width: 800px;
+        margin-top: 30px;
     }
 }
 
@@ -37,7 +36,6 @@ form {
 #contact-fieldset {
     width: 100%;
     max-width: 720px;
-    margin: 30px 0;
     border: none;
     @media (min-width: v.$break-sm) { 
         padding-left: 0;
@@ -45,6 +43,7 @@ form {
     @media (min-width: v.$break-med) { 
         display: flex;
         flex-wrap: wrap;
+        margin: 30px 0;
         margin-top: 0;
         align-items: flex-start;
         justify-content: flex-start;
@@ -124,6 +123,7 @@ form {
 
 #message {
     height: 100px;
+    padding: 5px 15px;
     @media (min-width: v.$break-med) { 
         //width: 770px;
         max-width: 1000px;
@@ -140,10 +140,10 @@ form {
 #button-div {
     width: 95%;
     display: flex;
-    margin: 30px auto 50px auto;
+    margin: 30px auto 0px auto;
     @media (min-width: v.$break-sm) { 
         width: v.$width-sm;
-        margin-left: 0;
+        margin: 30px auto 50px 0px;
     }
     @media (min-width: v.$break-med) { 
         width: v.$width-med-v2;

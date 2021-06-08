@@ -60,25 +60,33 @@
     }
     @media (min-width: v.$break-lg) { 
         width: 370px;
-        padding-right: 15px;
+        padding-right: 0px; //15px;
+        padding-top: 38px;
     }
 }
 
 .contact-details-title {
     background-color: v.$mainGrey;
-    height: 87px;
     margin-top: 5px; //allows a gap between the contact form submission message and the title.
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     width: 100%;
     @media (min-width: v.$break-med) { 
         background-color: transparent;
         padding-top: 25px;
         margin-bottom: 15px;
         margin-top: 0px;
+        height: 87px;
+    }
+    @media (min-width: v.$break-med) { 
+        margin-bottom: 45px;
+    }
+    @media (min-width: v.$break-lg) { 
+        margin-bottom: 15px; //should be 0px, but I like it better with 15px
     }
     h1 {
         color: v.$white;
         font-weight: v.$regular;
+        font-size: 36px;
         width: 95%;
         padding: 24px 0;
         margin: 0 auto;
@@ -111,9 +119,18 @@
 }
 
 .contact-details .br {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
     margin-top: -10px;
 }
+
+.contact-details .hours-br {
+    margin-bottom: 30px;
+}
+
+.out-of-hours {
+    line-height: 30px;
+} 
+
 
 #it-support-down-icon {
     color: v.$mainGrey;
@@ -143,6 +160,14 @@
     flex-direction: column;
     @media (min-width: v.$break-sm) { 
         flex-direction: row;
+        justify-content: space-between;
+        width: 720px;
+    }
+    @media (min-width: v.$break-med) { 
+        width: 940px;
+    }
+    @media (min-width: v.$break-lg) { 
+        width: 1170px;
     }
 }
 

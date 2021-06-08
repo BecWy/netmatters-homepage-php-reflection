@@ -97,15 +97,15 @@ $pageTitle = "Contact Us | Netmatters";
                             <p class="br"><a href="tel:+44-1493-603-204">01493 60 32 04</a></p>
                             <p><strong>Email us on:</strong></p>
                             <p class="br"><a href="sales@netmatters.com">sales@netmatters.com</a></p>
-                            <p class="br"><strong>Business Hours:</strong></p>
-                            <p class="br"><strong>Monday - Friday 07:00 - 18:00</strong></p>
-                            <a id="it-support-down-link"><p class="br"><strong>Out of Hours IT Support </strong><i class="fa fa-chevron-down" id="it-support-down-icon"></i></p></a>
+                            <p class="hours-br"><strong>Business Hours:</strong></p>
+                            <p class="hours-br"><strong>Monday - Friday 07:00 - 18:00</strong></p>
+                            <a id="it-support-down-link"><p class="hours-br"><strong>Out of Hours IT Support </strong><i class="fa fa-chevron-down" id="it-support-down-icon"></i></p></a>
                             <div class="it-support-down" id="it-support-down">
-                                <p>Netmatters IT are offering an Out of Hours service for Emergency and Critical tasks.</p>
+                                <p class="hours-br out-of-hours">Netmatters IT are offering an Out of Hours service for Emergency and Critical tasks.</p>
                                 <p><strong>Monday - Friday 18:00 - 22:00</strong></p>
                                 <p><strong>Saturday 08:00 - 16:00</strong></p>
-                                <p><strong>Sunday 10:00 - 18:00</strong></p>
-                                <p>To log a critical task, you will need to call our main line number and select Option 2 to leave an Out of Hours  voicemail. A technician will contact you on the number provided within 45 minutes of your call.</p>
+                                <p class="hours-br"><strong>Sunday 10:00 - 18:00</strong></p>
+                                <p class="hours-br out-of-hours">To log a critical task, you will need to call our main line number and select Option 2 to leave an Out of Hours  voicemail. A technician will contact you on the number provided within 45 minutes of your call.</p>
                             </div>
                         </div> <!-- end contact-details -->
 
@@ -158,10 +158,6 @@ $pageTitle = "Contact Us | Netmatters";
                                 </fieldset>  
                                 <div id="button-div">
                                     <button type="submit" id="submit-button"> 
-                                    <!-- class="g-recaptcha"  -->
-                                    <!-- data-sitekey="reCAPTCHA_site_key"  -->
-                                    <!-- data-callback='onSubmit'  -->
-                                    <!-- data-action='submit'> -->
                                         Send Enquiry
                                     </button>
                                 </div>
