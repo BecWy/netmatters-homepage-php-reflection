@@ -184,9 +184,9 @@
     line-height: 20px;
     color: v.$grey-color3;
     width: 100%;
-    @media (min-width: v.$break-sm) {
-        width: 308px;
-    }
+    // @media (min-width: v.$break-sm) {
+    //     width: 308px;
+    // }
 }
 
 .posted-by-text {

@@ -146,7 +146,7 @@ $pageTitle = "Contact Us | Netmatters";
                                         <input type="text" id="subject" name="user_subject" class="contact-field" required="required"><br>
                                     </div>
 
-                                    <label for="message" class="contact-label">Message <span class="required">*</span></label><br>
+                                    <label for="message" class="contact-label" id="message-contact-label">Message <span class="required">*</span></label><br>
                                     <textarea id="message" name="user_message" class="contact-field" required="required"></textarea><br>
                                     
                                     <div id="form-checkbox-div"> <!--change these names/classes to marketing. I've removed required already -->

@@ -2196,11 +2196,6 @@ body {
   color: #666;
   width: 100%;
 }
-@media (min-width: 768px) {
-  .posted-by {
-    width: 308px;
-  }
-}
 
 .posted-by-text {
   display: flex;
@@ -3533,8 +3528,7 @@ form {
   #contact-fieldset {
     display: flex;
     flex-wrap: wrap;
-    margin: 30px 0;
-    margin-top: 0;
+    margin: 0;
     align-items: flex-start;
     justify-content: flex-start;
     max-width: none;
@@ -3620,6 +3614,10 @@ form {
   color: #d24d57;
 }
 
+#contact-fieldset > #message-contact-label {
+  margin-bottom: 0px;
+}
+
 #message {
   height: 100px;
   padding: 5px 15px;
@@ -3643,11 +3641,13 @@ form {
   width: 95%;
   display: flex;
   margin: 30px auto 0px auto;
+  padding: 0 5px;
 }
 @media (min-width: 768px) {
   #button-div {
     width: 720px;
-    margin: 30px auto 50px 0px;
+    margin: 30px auto 0px 0px;
+    padding: 0px;
   }
 }
 @media (min-width: 993px) {
