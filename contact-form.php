@@ -28,29 +28,35 @@ if($_POST) {
         }
     }
 
-    //filter input - need additional criteria here or in JS. 
-    //Remove spaces? If I want to do this can use trim.
+    //filter input. First checks for a valid British number, but will ultimately accept any number 5-20 digits in length once letters have been removed.
     if(isset($_POST['user_phone'])) {
         $sanitizedPhone = filter_var($_POST['user_phone'], FILTER_SANITIZE_STRING);
         $phoneUtil = \libphonenumber\PhoneNumberUtil::getInstance();
-        //var_dump("this is the sanitised number: $sanitizedPhone");
+        $editedSanitizedPhone = preg_replace("/[^0-9+ ]/", "", $sanitizedPhone); //the space before the closing ] is important so that any input spaces are retained. The + permits a plus to be used in the database format.
+        //var_dump("this is the sanitised number: $sanitizedPhone"); TEST
         
         try {
             $sanitizedPhoneProto = $phoneUtil->parse($sanitizedPhone, 'GB');
-            //var_dump($sanitizedPhoneProto);
             $isValid = $phoneUtil->isValidNumber($sanitizedPhoneProto);
-            //var_dump($isValid);
             if($isValid === true) {
-                // Produces format "044 668 18 00"
+                // Produces international format
                 $phone = $phoneUtil->format($sanitizedPhoneProto, \libphonenumber\PhoneNumberFormat::INTERNATIONAL);
-            } else if(strlen($sanitizedPhone) > 5 && strlen($sanitizedPhone) < 20) {
+                //var_dump("totally valid"); TESTING
+            } else if(strlen($editedSanitizedPhone) > 5 && strlen($editedSanitizedPhone) < 20) {
                 //number may still be valid, but an international number. Just need to make sure it's not malicious.
-                //$justNums = preg_replace("/[^0-9]/", '', $string);
-                $phone = preg_replace("^[0-9+\(\)#\.\s\/ext-]+$", '', $sanitizedPhone);
+                $phone = $editedSanitizedPhone;
+                //var_dump("could be valid"); TESTING
             }
+            //if there's an exception I still need to check if there is any possibility the number could be valid (if an international number etc)
         } catch (\libphonenumber\NumberParseException $e) {
-            var_dump($e);
-        }
+            if(strlen($editedSanitizedPhone) > 5 && strlen($editedSanitizedPhone) < 20) {
+                $phone = $editedSanitizedPhone;
+                //var_dump("exception, but could still be valid"); TESTING
+            // } else {
+            //     //var_dump("invalid"); TESTING
+            // }
+            }
+        }      
     }
 
     //filter input & to first character of first word in uppercase
@@ -91,30 +97,13 @@ if($_POST) {
 
 
 <?php
+
+
+
 //phone
+//Needs to accept numbers and some special chars only.
+//min and max number of characters - use strlen
 
-
-//phone
-//Needs to accept numbers and special chars only.
-//min and max number of characters
-// Use strlen to validate the field lengths.
-
-//$phone = preg_replace('^[0-9+\(\)#\.\s\/ext-]+$');
-
-
-
-
-// $phone = '000-0000-0000';
-
-// if(preg_match("/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/", $phone)) {
-//   // $phone is valid
-// }
-
-//eliminate every char except 0-9
+//$phone = preg_replace("^[0-9+\(\)#\.\s\/ext-]+$", "", $sanitizedPhone);
 //$justNums = preg_replace("/[^0-9]/", '', $string);
-//Better option... just strip all non-digit characters on input (except 'x' and leading '+' signs)
-//also allow brackets
 
-// If you just want to verify you don't have random garbage in the field (i.e., from form spammers) this regex should do nicely:
-//this finds any character that is NOT between the brackets
-//     ^[0-9+\(\)#\.\s\/ext-]+$

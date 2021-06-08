@@ -1332,49 +1332,76 @@ submitButton.addEventListener("click", function (event) {
   } //prevent the form from submitting if the phone number is not valid
 
 
-  var isPhoneValid = true; //assume true intitially when clicked, then if the phone fails validation this changes to false.
+  var isPhoneValid = false; //assume false intitially when clicked, then if the phone fails validation this changes to false.
 
   if (phoneInput.value !== "") {
-    var phoneUtil = __webpack_require__(1).PhoneNumberUtil.getInstance();
+    var phoneString = phoneInput.value.replace(/[^\d\+]/g, ""); //remove characters that shouldn't be pesent in a phone number
+    //console.log(phoneString); test
 
-    if (!phoneUtil.isValidNumberForRegion(phoneUtil.parse(phoneInput.value, 'GB'), 'GB')) {
-      event.preventDefault();
-      errorMessagePhone.style.display = "flex";
-      isPhoneValid = false;
-    } else {
-      errorMessagePhone.style.display = "none";
-      isPhoneValid = true;
+    var phoneUtil = __webpack_require__(1).PhoneNumberUtil.getInstance(); //check if the number can be identified as a UK number.
+
+
+    try {
+      //was a not statement with '!' in front of phoneUtil at the start of the statement.
+      if (phoneUtil.isValidNumberForRegion(phoneUtil.parse(phoneInput.value, 'GB'), 'GB')) {
+        isPhoneValid = true;
+        errorMessagePhone.style.display = "none";
+        console.log("if one"); //if the number could still be valid (i.e. international)
+      } else if (phoneString.length > 5 && phoneString.length < 20) {
+        isPhoneValid = true;
+        errorMessagePhone.style.display = "none";
+        console.log("if five");
+      } //if an error is not thrown, but the number has been identified as invalid
+      else {
+          event.preventDefault();
+          errorMessagePhone.style.display = "flex";
+          isPhoneValid = false;
+          console.log("if four");
+        }
+    } // if an error is thrown, check if the number could still possibly be a valid number (i.e. an international number).
+    catch (_unused) {
+      //check the string with any extra characters removed to see if the number could still be valid
+      if (phoneString.length > 5 && phoneString.length < 20) {
+        isPhoneValid = true;
+        errorMessagePhone.style.display = "none";
+        console.log("if two"); //if the number is not valid
+      } else {
+        event.preventDefault();
+        errorMessagePhone.style.display = "flex";
+        isPhoneValid = false;
+        console.log("if three");
+      }
     }
   } //add a red border to all empty/ invalid fields
 
 
   if (nameInput.value === "") {
-    nameInput.style.border = "1px solid red";
+    nameInput.style.border = "1px solid #d64541";
   } else {
     nameInput.style.border = "1px solid #ccc";
   }
 
   if (emailInput.value === "" || emailInput.checkValidity() === false) {
     //console.log("the email is not valid");
-    emailInput.style.border = "1px solid red";
+    emailInput.style.border = "1px solid #d64541";
   } else {
     emailInput.style.border = "1px solid #ccc";
   }
 
   if (phoneInput.value === "" || isPhoneValid === false) {
-    phoneInput.style.border = "1px solid red";
+    phoneInput.style.border = "1px solid #d64541";
   } else {
     phoneInput.style.border = "1px solid #ccc";
   }
 
   if (subjectInput.value === "") {
-    subjectInput.style.border = "1px solid red";
+    subjectInput.style.border = "1px solid #d64541";
   } else {
     subjectInput.style.border = "1px solid #ccc";
   }
 
   if (messageInput.value === "" || messageInput.value.length < 5) {
-    messageInput.style.border = "1px solid red";
+    messageInput.style.border = "1px solid #d64541";
   } else {
     messageInput.style.border = "1px solid #ccc";
   } //add focus to the first empty/invalid field

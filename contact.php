@@ -157,10 +157,11 @@ $pageTitle = "Contact Us | Netmatters";
 
                                 </fieldset>  
                                 <div id="button-div">
-                                    <button type="submit" id="submit-button" class="g-recaptcha" 
-                                    data-sitekey="reCAPTCHA_site_key" 
-                                    data-callback='onSubmit' 
-                                    data-action='submit'>
+                                    <button type="submit" id="submit-button"> 
+                                    <!-- class="g-recaptcha"  -->
+                                    <!-- data-sitekey="reCAPTCHA_site_key"  -->
+                                    <!-- data-callback='onSubmit'  -->
+                                    <!-- data-action='submit'> -->
                                         Send Enquiry
                                     </button>
                                 </div>
